@@ -114,7 +114,7 @@ export default function Presentation() {
         >
           <video
             ref={videoRef}
-            src={mooves}
+            src={''}
             style={{
               width: '100%',
               height: 'auto',
