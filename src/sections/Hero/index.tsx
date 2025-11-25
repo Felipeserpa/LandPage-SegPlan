@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { FaPlay, FaPause, FaWhatsapp } from 'react-icons/fa';
 import Container from './styles';
 import moovideos from '../../assets/videos/segplan.mp4';
-import logoWatermark from '../../assets/images/Chat.png';
 
 export default function Presentation() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -57,7 +56,7 @@ export default function Presentation() {
           width: '100%',
           maxWidth: '1100px',
           backgroundColor: 'rgba(255, 255, 255, 0.9)',
-
+          backgroundImage: `url(/assets/images/Chat.png)`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'contain',

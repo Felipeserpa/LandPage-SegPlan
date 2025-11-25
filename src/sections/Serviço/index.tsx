@@ -9,70 +9,44 @@ import Container from './styles';
 export default function Skills() {
   return (
     <Container>
-      <section id="skills" className="section-blue">
+      <section id="skills" className="section-white">
         <div className="container">
-          <h1 className="section-title text-white">SERVIÇOS</h1>
+          <h1 className="section-title text-black">
+            {' '}
+            NOSSOS PRINCIPAIS SERVIÇOS
+          </h1>
           <div className="section-container">
-            <div className="section-article">
-              <p
-                style={{
-                  width: '100%',
-                  fontSize: '2rem',
-                }}
-              >
-                Nosso serviço de transporte é pensado para aqueles que precisam
-                de um deslocamento seguro e confortável. Oferecemos veículos
-                modernos e motoristas experientes para sua total tranquilidade.
-                Conte com nossa pontualidade e compromisso para chegar ao seu
-                destino com segurança.
-              </p>
-            </div>
-            <p
-              style={{
-                textAlign: 'center',
-                padding: '20px',
-                width: '100%',
-                fontSize: '25px',
-              }}
-            >
-              Alguns dos lugares aonde podemos levá-lo:
-            </p>
             <div id="skills-container" data-aos="fade-up">
               <div className="skill-card">
-                <h2>Hospitais</h2>
                 <FaHospital className="icon" />
+                <h2>Inspeção Predial</h2>
+                <p>
+                  {' '}
+                  Análise minuciosa da edificação para garantir segurança e
+                  conformidade com as normas
+                </p>
+                <button>saiba mais</button>
               </div>
+
               <div className="skill-card">
-                <h2>Academias</h2>
                 <IoBarbellOutline className="icon" />
+                <h2>Fiscalização de Obras</h2>
+                <p>
+                  Acompanhamento rigoroso de sua obra para assegurar a qualidade
+                  e o cumprimento de prazos
+                </p>
+                <button>saiba mais</button>
               </div>
 
               <div className="skill-card">
-                <h2>Centro Dialise</h2>
                 <BsDropletFill className="icon" />
-              </div>
-
-              <div className="skill-card">
-                <h2>Fisioterapias</h2>
-                <FaNotesMedical className="icon" />
-              </div>
-
-              <div className="skill-card">
-                <h2>Centros de saúde</h2>
-                <FaClinicMedical className="icon" />
-              </div>
-              <div className="skill-card">
-                <h2>Eventos Sociais</h2>
-                <BsBuilding className="icon" />
-              </div>
-
-              <div className="skill-card">
-                <h2>compras</h2>
-                <BsCart4 className="icon" />
-              </div>
-              <div className="skill-card">
-                <h2>E muito mais...</h2>
-                <IoIosAdd className="icon" />
+                <h2>Laudos Técnicos</h2>
+                <p>
+                  {' '}
+                  Exposição de um inspetor predial e posterior emisão do
+                  respectivo laudo técnico
+                </p>
+                <button>saiba mais</button>
               </div>
             </div>
 
@@ -84,7 +58,7 @@ export default function Skills() {
                 fontSize: '25px',
               }}
             >
-              Nossos diferenciais:
+              Seus Beneficios
             </p>
             <p
               style={{
@@ -93,10 +67,7 @@ export default function Skills() {
                 width: '100%',
                 fontSize: '20px',
               }}
-            >
-              Veiculo confortável e seguro Atendimento humanizado e atencioso
-              Segurança e tranquilidade em cada trajeto.
-            </p>
+            ></p>
           </div>
         </div>
       </section>

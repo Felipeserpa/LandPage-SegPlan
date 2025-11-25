@@ -42,7 +42,7 @@ export default function Header() {
         <nav>
           <div id="logo">
             <a href="/">
-              <img src="/assets/images/chat.png" alt="Logo da Segplan" />
+              <img src="/assets/images/Chat.png" alt="Logo da Segplan" />
             </a>
           </div>
           <div className={active ? 'nav-menu  active' : 'nav-menu '}>
@@ -55,7 +55,7 @@ export default function Header() {
                 <a href="#inicio">Serviços</a>
               </li>
               <li>
-                <a href="#cliente">Beneficios</a>
+                <a href="#skills">Beneficios</a>
               </li>
 
               <li>

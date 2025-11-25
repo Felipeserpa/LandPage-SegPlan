@@ -15,7 +15,7 @@ const Container = styled.div`
   .section-article p {
     flex: 1 1 40%;
     min-width: 300px;
-    color: ${(props) => props.theme.aliceBlue};
+    color: ${(props) => props.theme.black};
     padding: 0.6rem;
     box-sizing: border-box;
   }
@@ -43,9 +43,10 @@ const Container = styled.div`
   }
 
   .skill-card {
-    border: 1px solid ${(props) => props.theme.primaryColor};
+    border: 1px solid ${(props) => props.theme.black};
     width: 25rem;
     padding: 2rem;
+    margin-left: 5rem;
     text-align: center;
     transition: 0.5s ease-in-out;
     background-color: rgba(0, 0, 0, 0.2);
@@ -65,7 +66,7 @@ const Container = styled.div`
   }
 
   .skill-card h2 {
-    color: aliceblue;
+    color: Black;
     font-size: 2.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -76,7 +77,7 @@ const Container = styled.div`
   }
 
   .skill-card p {
-    color: #ccc;
+    color: #0e0c0cff;
     font-size: 1.4rem;
     line-height: 1.6;
     padding: 0 1rem;
