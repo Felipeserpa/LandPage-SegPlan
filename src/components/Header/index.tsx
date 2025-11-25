@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 import Container from './styles';
 import { FaWhatsapp } from 'react-icons/fa';
-import Chat from '../../assets/images/Chat.png';
+import chat from '../../assets/images/chat.png';
 
 export default function Header() {
   const [active, setMode] = useState(false);
@@ -43,7 +43,7 @@ export default function Header() {
         <nav>
           <div id="logo">
             <a href="/">
-              <img src={Chat} alt="Logo da Segplan" />
+              <img src={chat} alt="Logo da Segplan" />
             </a>
           </div>
           <div className={active ? 'nav-menu  active' : 'nav-menu '}>
