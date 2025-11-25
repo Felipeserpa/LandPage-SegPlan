@@ -10,8 +10,8 @@ import {
 } from 'react-icons/fa';
 import Container from './styles';
 import { FaWhatsapp } from 'react-icons/fa';
-import segplanLogo from '../../assets/images/Chat.png';
-import React from 'react';
+
+import segplanLogo from '../../assets/images/chat.jpg';
 
 export default function Header() {
   const [active, setMode] = useState(false);
