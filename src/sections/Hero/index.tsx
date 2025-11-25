@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { FaPlay, FaPause, FaWhatsapp } from 'react-icons/fa';
 import Container from './styles';
-import mooves from '../../assets/videos/moove.mp4';
+import moovideos from '../../assets/videos/segplan.mp4';
+import logoWatermark from '../../assets/images/Chat.png';
 
 export default function Presentation() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -42,7 +43,7 @@ export default function Presentation() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '5%',
-        backgroundImage: 'url("../../assets/images/background.jpg")',
+
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -55,7 +56,12 @@ export default function Presentation() {
           justifyContent: 'space-between',
           width: '100%',
           maxWidth: '1100px',
-          background: 'rgba(255, 255, 255, 0.9)',
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'contain',
+          backgroundBlendMode: 'luminosity',
           borderRadius: '10px',
           padding: '50px',
           boxShadow: '0px 10px 30px rgba(0,0,0,0.1)',
@@ -65,14 +71,17 @@ export default function Presentation() {
       >
         {/* Texto à esquerda */}
         <div
-          style={{ width: '50%', textAlign: 'left', padding: '10px' }}
+          style={{
+            width: '45%',
+            textAlign: 'left',
+            padding: '20px',
+          }}
           id="inicio"
         >
           <h1
             style={{ fontSize: '34px', color: '#131212', marginBottom: '20px' }}
           >
-            Laudos Técnicos e Engenharia Diagnóstica com Precisão e
-            Credibilidade
+            Engenharia Diagnóstica com Precisão e Credibilidade
           </h1>
           <p
             style={{
@@ -83,7 +92,7 @@ export default function Presentation() {
             }}
           >
             Inspeção Predial,Fiscalização de Obras e Laudos Técnicos realizados
-            por engenheiros especializados com CREA
+            por engenheiros especializados.
           </p>
           <a href="https://wa.me/message/VOG6YD5POXPPG1" className="cta">
             <button
@@ -110,13 +119,18 @@ export default function Presentation() {
         {/* Vídeo à direita */}
         <div
           className="video-container"
-          style={{ width: '50%', textAlign: 'center', position: 'relative' }}
+          style={{
+            width: '45%',
+            textAlign: 'center',
+            position: 'relative',
+          }}
         >
           <video
             ref={videoRef}
-            src={''}
+            src={moovideos}
             style={{
-              width: '100%',
+              width: '200%',
+              maxWidth: '100%',
               height: 'auto',
               maxHeight: '420px',
               borderRadius: '10px',
