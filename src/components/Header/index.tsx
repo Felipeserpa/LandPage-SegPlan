@@ -11,8 +11,6 @@ import {
 import Container from './styles';
 import { FaWhatsapp } from 'react-icons/fa';
 
-import segplanLogo from '../../assets/images/chat.jpg';
-
 export default function Header() {
   const [active, setMode] = useState(false);
   const toggleMode = () => {
@@ -44,7 +42,7 @@ export default function Header() {
         <nav>
           <div id="logo">
             <a href="/">
-              <img src={segplanLogo} alt="Logo da Segplan" />
+              <img src="/assets/images/chat.png" alt="Logo da Segplan" />
             </a>
           </div>
           <div className={active ? 'nav-menu  active' : 'nav-menu '}>
