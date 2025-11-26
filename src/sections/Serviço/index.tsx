@@ -1,74 +1,60 @@
-import { FaHospital, FaNotesMedical, FaClinicMedical } from 'react-icons/fa';
-
 import { IoBarbellOutline } from 'react-icons/io5';
-import { IoIosAdd } from 'react-icons/io';
-import { BsDropletFill, BsCart4, BsBuilding } from 'react-icons/bs';
-
+import { BsDropletFill } from 'react-icons/bs';
+import { FcOrganization } from 'react-icons/fc';
 import Container from './styles';
+
+import Benefits from '../../components/benificio';
+const services = [
+  {
+    icon: <FcOrganization className="icon" />,
+    title: 'Inspeção Predial',
+    description:
+      'Análise minuciosa da edificação para garantir segurança e conformidade com as normas',
+  },
+  {
+    icon: <IoBarbellOutline className="icon" />,
+    title: 'Fiscalização de Obras',
+    description:
+      'Acompanhamento rigoroso de sua obra para assegurar a qualidade e o cumprimento de prazos',
+  },
+  {
+    icon: <BsDropletFill className="icon" />,
+    title: 'Laudos Técnicos',
+    description:
+      'Exposição de um inspetor predial e posterior emissão do respectivo laudo técnico',
+  },
+];
 
 export default function Skills() {
   return (
     <Container>
-      <section id="skills" className="section-white">
+      <section
+        id="skills"
+        className="section-white"
+        // Adiciona um preenchimento na parte inferior para evitar sobreposição do rodapé
+        style={{ paddingBottom: '8rem' }}
+      >
         <div className="container">
           <h1 className="section-title text-black">
-            {' '}
             NOSSOS PRINCIPAIS SERVIÇOS
           </h1>
           <div className="section-container">
             <div id="skills-container" data-aos="fade-up">
-              <div className="skill-card">
-                <FaHospital className="icon" />
-                <h2>Inspeção Predial</h2>
-                <p>
-                  {' '}
-                  Análise minuciosa da edificação para garantir segurança e
-                  conformidade com as normas
-                </p>
-                <button>saiba mais</button>
-              </div>
-
-              <div className="skill-card">
-                <IoBarbellOutline className="icon" />
-                <h2>Fiscalização de Obras</h2>
-                <p>
-                  Acompanhamento rigoroso de sua obra para assegurar a qualidade
-                  e o cumprimento de prazos
-                </p>
-                <button>saiba mais</button>
-              </div>
-
-              <div className="skill-card">
-                <BsDropletFill className="icon" />
-                <h2>Laudos Técnicos</h2>
-                <p>
-                  {' '}
-                  Exposição de um inspetor predial e posterior emisão do
-                  respectivo laudo técnico
-                </p>
-                <button>saiba mais</button>
-              </div>
+              {services.map((service, index) => (
+                <div className="skill-card" key={index}>
+                  {service.icon}
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
+                  <button>Saiba mais</button>
+                </div>
+              ))}
             </div>
 
-            <p
-              style={{
-                textAlign: 'center',
-                padding: '20px',
-                width: '100%',
-                fontSize: '25px',
-              }}
-            >
-              Seus Beneficios
+            <p className="section-subtitle , color:'#007bff'">
+              Seus Benefícios
             </p>
-            <p
-              style={{
-                textAlign: 'center',
-                padding: '20px',
-                width: '100%',
-                fontSize: '20px',
-              }}
-            ></p>
-          </div>
+          </div>{' '}
+          <Benefits />
         </div>
       </section>
     </Container>

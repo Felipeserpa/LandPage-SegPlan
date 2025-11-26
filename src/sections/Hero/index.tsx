@@ -41,8 +41,7 @@ export default function Presentation() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '5%',
-
+        padding: '2rem 5%',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
