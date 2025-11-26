@@ -55,7 +55,7 @@ const Container = styled.div`
     padding: 3rem;
     border-radius: 15px;
     text-align: center;
-    width: 28rem; /* Aumentado para deixar o card mais largo */
+    width: 20rem; /* Aumentado para deixar o card mais largo */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
