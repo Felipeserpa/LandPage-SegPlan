@@ -9,6 +9,7 @@ import Hero from './sections/Hero';
 import Skills from './sections/Serviço';
 import GlobalStyles from './assets/styles/GlobalStyles';
 import theme from './assets/styles/theme';
+import About from './sections/About';
 //import { Analytics } from '@vercel/analytics/react';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <Header />
       <Hero />
       <Skills />
-      {/* <About /> */}
+      <About />
       {/* <Portfolio /> */}
       {/* <Contact /> */}
       {/* <Analytics /> */}

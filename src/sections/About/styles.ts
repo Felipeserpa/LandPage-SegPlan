@@ -1,95 +1,136 @@
 import styled from 'styled-components';
 
+// O Styled-Components para o CredibilityCard
 const Container = styled.div`
-  #about .section-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10rem;
-    padding: 3rem;
-    width: auto;
+  padding: 60px 20px;
+  background-color: #f7f7f7; /* Fundo leve para o contêiner externo */
+
+  /* O GRANDE CARD BRANCO QUE CONTÉM OS DOIS PERFIS */
+  .credibility-card-wrapper {
+    max-width: 15000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
   }
 
-  #about article {
-    padding-right: 3rem;
-  }
+  /* Estilo para cada linha de perfil (Marcello vs Marcelo) */
+  .profile-row {
+    margin-bottom: 20px;
+    padding: 20px 0;
 
-  #about article p {
-    font-size: 2rem;
-    color: ${(props) => props.theme.aliceBlue};
-    line-height: 2.8rem;
-    padding: 10px;
-  }
+    /* Configuração interna do Flexbox */
+    .profile-info {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      width: 100%;
 
-  #about article li {
-    font-size: 2rem;
-    color: ${(props) => props.theme.aliceBlue};
-    line-height: 2.8rem;
-  }
-
-  /* Estilos para o container do logo */
-  .container-logo {
-    position: relative;
-    width: auto;
-    max-width: 800px;
-    height: auto;
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white; /* Define o fundo como branco */
-    z-index: 0; /* Centraliza verticalmente */
-  }
-
-  /* Quadrado branco atrás do logo */
-  .container-logo::before {
-    /* Usando ::before */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: -1;
-  }
-
-  #about picture img {
-    max-width: 300px;
-    height: auto;
-    z-index: 1;
-  }
-
-  @media (max-width: 978px) {
-    #about article p {
-      text-align: left;
-    }
-  }
-
-  @media (max-width: 930px) {
-    #about .section-container {
+      /* Padrão: Empilha em mobile */
       flex-direction: column;
-      padding: 0 3rem;
-      gap: 4rem;
-    }
+      text-align: center;
 
-    #about article {
-      padding: 0;
-    }
-
-    #about picture img {
-      width: 34rem;
+      /* Desktop: Lado a Lado (Foto/Texto) */
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+      }
     }
   }
-  @media (min-width: 931px) {
-    .container-logo {
-      max-width: 1200px; /* Largura máxima para telas maiores */
-      padding: 50px; /* Ajuste o padding para telas maiores */
-    }
 
-    #about picture img {
-      max-width: 800px; /* Largura máxima do logo para telas maiores */
+  /* Efeito ZIG-ZAG: Inverte a ordem da FOTO e do TEXTO na segunda linha */
+  .profile-row.reversed {
+    border-top: 1px solid #eee; /* Linha sutil separando os dois perfis */
+    margin-top: 20px;
+
+    .profile-info {
+      /* Desktop: Inverte a ordem do conteúdo para o segundo perfil */
+      @media (min-width: 768px) {
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+
+      /* Ajuste do alinhamento da lista quando invertido */
+      .text-info {
+        @media (min-width: 768px) {
+          text-align: right;
+        }
+      }
+      .qualification-list {
+        @media (min-width: 768px) {
+          padding-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  /* Foto do Engenheiro (Circular) */
+  .photo-wrapper {
+    flex-shrink: 0;
+    margin-bottom: 15px; /* Espaço para mobile */
+  }
+
+  .engineer-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Informações de Texto */
+  .text-info {
+    flex-grow: 1;
+
+    /* Ajuste da largura do texto em telas grandes */
+    @media (min-width: 768px) {
+      max-width: 80%;
+    }
+  }
+
+  .role {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #10c058; /* Cor verde para o cargo/título */
+    margin-bottom: 5px;
+  }
+
+  .name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+  }
+
+  .crea {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+  }
+
+  /* Lista de Qualificações */
+  .qualification-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  .qualification-list li {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+
+    /* Ponto de lista personalizado (pode ser o ✓ ou um •) */
+    &::before {
+      content: '•'; /* Usando ponto para replicar o design da imagem */
+      color: #10c058;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-right: 5px;
     }
   }
 `;
-
 export default Container;

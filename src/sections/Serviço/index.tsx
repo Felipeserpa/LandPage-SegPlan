@@ -1,60 +1,65 @@
+// Seu arquivo Skills.jsx (Sugestão de nome: ServicesSection.jsx)
+import React from 'react';
 import { IoBarbellOutline } from 'react-icons/io5';
 import { BsDropletFill } from 'react-icons/bs';
 import { FcOrganization } from 'react-icons/fc';
-import Container from './styles';
+import Container from './styles'; // Styled-Components
 
-import Benefits from '../../components/benificio';
+import Benefits from '../../components/benificio'; // Componente de Benefícios
+
 const services = [
   {
-    icon: <FcOrganization className="icon" />,
+    // Usando FcOrganization (ícone de empresa)
+    icon: <FcOrganization className="service-icon" />,
     title: 'Inspeção Predial',
     description:
-      'Análise minuciosa da edificação para garantir segurança e conformidade com as normas',
+      'Análise detalhada para garantir a segurança, funcionalidade e valorização do seu imóvel.',
   },
   {
-    icon: <IoBarbellOutline className="icon" />,
+    // Usando IoBarbellOutline (ícone de Força/Estrutura - Adaptei para Fiscalização)
+    icon: <IoBarbellOutline className="service-icon" />,
     title: 'Fiscalização de Obras',
     description:
-      'Acompanhamento rigoroso de sua obra para assegurar a qualidade e o cumprimento de prazos',
+      'Acompanhamento e controle de qualidade para o cumprimento do projeto e normas.',
   },
   {
-    icon: <BsDropletFill className="icon" />,
+    // Usando BsDropletFill (Ícone genérico - Adaptei para Laudos)
+    icon: <BsDropletFill className="service-icon" />,
     title: 'Laudos Técnicos',
     description:
-      'Exposição de um inspetor predial e posterior emissão do respectivo laudo técnico',
+      'Documentos essenciais para comprovar o estado da edificação e conformidade.',
   },
 ];
 
-export default function Skills() {
+export default function ServicesSection() {
+  // Renomeado para ServicesSection
   return (
     <Container>
       <section
-        id="skills"
+        id="services" // Melhor ID para a seção
         className="section-white"
-        // Adiciona um preenchimento na parte inferior para evitar sobreposição do rodapé
-        style={{ paddingBottom: '8rem' }}
       >
         <div className="container">
-          <h1 className="section-title text-black">
+          <h2 className="section-title text-black">
             NOSSOS PRINCIPAIS SERVIÇOS
-          </h1>
-          <div className="section-container">
+          </h2>
+
+          <div className="services-container">
+            {' '}
+            {/* Renomeado para clareza */}
             <div id="skills-container" data-aos="fade-up">
               {services.map((service, index) => (
                 <div className="skill-card" key={index}>
-                  {service.icon}
+                  <div className="icon-wrapper">{service.icon}</div>
                   <h2>{service.title}</h2>
                   <p>{service.description}</p>
-                  <button>Saiba mais</button>
+                  <button className="card-button">Saiba Mais</button>
                 </div>
               ))}
             </div>
-
-            <p className="section-subtitle , color:'#007bff'">
-              Seus Benefícios
-            </p>
-          </div>{' '}
-          <Benefits />
+            {/* O SUBTÍTULO 'SEUS BENEFÍCIOS' SERÁ TRATADO DENTRO DO COMPONENTE <Benefits /> */}
+            <Benefits />
+          </div>
         </div>
       </section>
     </Container>

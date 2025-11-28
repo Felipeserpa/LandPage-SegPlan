@@ -1,3 +1,5 @@
+// Seu arquivo Benefits.jsx COMPLETO E CORRIGIDO
+
 import React from 'react';
 import styled from 'styled-components';
 import {
@@ -8,30 +10,31 @@ import {
   FaStar,
 } from 'react-icons/fa';
 
+// Dados
 const benefits = [
   {
     icon: <FaCheckCircle />,
-    title: 'Qualidade Garantida',
+    title: 'Garantia de Qualidade',
     description:
       'Compromisso com a excelência em cada detalhe, assegurando a máxima qualidade em nossos serviços.',
   },
   {
     icon: <FaShieldAlt />,
-    title: 'Segurança',
+    title: 'Segurança e Conformidade',
     description:
-      'Priorizamos a segurança em todas as etapas do projeto, garantindo tranquilidade e conformidade.',
+      'Priorizamos a segurança em todas as etapas do projeto e garantimos total conformidade legal.',
   },
   {
     icon: <FaClock />,
-    title: 'Prazos Cumpridos',
+    title: 'Otimização de Prazos',
     description:
-      'Respeitamos o seu tempo com um planejamento eficiente e execução pontual.',
+      'Respeitamos o seu tempo com um planejamento eficiente e execução pontual, sem atrasos.',
   },
   {
     icon: <FaThumbsUp />,
-    title: 'Satisfação do Cliente',
+    title: 'Foco na Satisfação',
     description:
-      'Sua satisfação é nossa maior recompensa e o principal indicador de nosso sucesso.',
+      'Sua satisfação é nossa prioridade. Oferecemos soluções personalizadas e transparentes.',
   },
   {
     icon: <FaStar />,
@@ -41,65 +44,95 @@ const benefits = [
   },
 ];
 
+// Styled-Component
 const Container = styled.div`
-  .benefits-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+  padding: 40px 20px 80px;
+  background-color: #f9f9f9;
+  width: 100%; /* GARANTE QUE O CONTÊINER PRINCIPAL USE 100% DA LARGURA */
+
+  /* Título da Seção */
+  .benefits-section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
   }
 
+  /* Container Principal - Configurado como Grid para Cards */
+  .benefits-container {
+    display: grid;
+    /* TENTA CRIAR 3 COLUNAS (33%) NO MÁXIMO, USANDO MÍNIMO DE 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 25px;
+    justify-content: center; /* Centraliza os itens no contêiner */
+  }
+
+  /* Estilo do Card Individual */
   .benefit-card {
-    background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
-    padding: 3rem;
-    border-radius: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px 20px;
     text-align: center;
-    width: 20rem; /* Aumentado para deixar o card mais largo */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      background: linear-gradient(135deg, #d9e4ff, #cce0ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Ícone */
+  .benefit-icon {
+    font-size: 2.5rem;
+    color: #10c058;
+    margin-bottom: 15px;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .benefit-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Responsividade: Garante duas colunas em tablets e uma em mobile */
+  @media (max-width: 900px) {
+    .benefits-container {
+      /* Garante no máximo 2 colunas em telas menores */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-
-    @media (max-width: 768px) {
-      width: 45%;
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      width: 90%;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0a0a0a;
-      margin-top: 0.5rem;
-    }
-
-    .benefit-icon {
-      font-size: 3rem;
-      color: #007bff;
-      margin-bottom: 0.8rem;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #555;
-      margin-top: 0.5rem;
-      display: block; // Alterado para exibir a descrição
+  }
+  @media (max-width: 600px) {
+    .benefits-container {
+      grid-template-columns: 1fr;
     }
   }
 `;
 
+// Componente React
 export default function Benefits() {
   return (
     <Container>
+      <h2 className="benefits-section-title">Seus Benefícios</h2>
       <div className="benefits-container">
         {benefits.map((benefit, index) => (
           <div className="benefit-card" key={index}>

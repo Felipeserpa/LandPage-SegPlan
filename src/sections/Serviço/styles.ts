@@ -1,100 +1,136 @@
+// Seu arquivo styles.js
 import styled from 'styled-components';
 
 const Container = styled.div`
-  .section-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
+  /* Estilos Globais da Seção */
+  .section-white {
+    background-color: #f9f9f9; /* Fundo cinza claro como na imagem */
+    padding: 10px;
 
-  #skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-  }
-
-  .skill-card {
-    background: linear-gradient(135deg, #f0f4ff, #e6f0ff);
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    padding: 2rem;
-    width: 30rem; /* Aumentado para deixar o card mais largo */
-    margin-left: 5rem;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-
-    &:hover {
-      transform: translateY(-5px) scale(1.05);
-      background-color: rgba(0, 0, 0, 0.1);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    h2 {
+    .section-title {
       font-size: 2rem;
-      margin: 1rem 0;
-      color: #000;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      text-transform: uppercase;
     }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .services-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    /* Container dos Cards */
+    #skills-container {
+      /* Mantido o ID para não quebrar seu código */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px; /* Espaçamento entre os cards */
+      width: 100%;
+    }
+
+    /* Estilo do Card Individual */
+    .skill-card {
+      /* O card na imagem é branco, sem gradiente forte */
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px 25px;
+      width: 320px; /* Tamanho fixo para desktop, mais próximo da imagem */
+      margin: 0; /* Removido o margin-left que estava desalinhando */
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+      transition: transform 0.3s, box-shadow 0.3s;
+      /* Adiciona flexbox para garantir que o conteúdo se alinhe verticalmente */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Wrapper para o círculo do ícone */
+    .icon-wrapper {
+      background-color: #e6f0ff; /* Cor azul claro como na imagem */
+      border-radius: 50%;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Estilo do Ícone */
+    .service-icon {
+      font-size: 2.5rem; /* Ajustado para um tamanho maior */
+      color: #007bff; /* Cor azul de destaque no ícone */
+    }
+
+    .skill-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 10px 0;
       color: #333;
     }
 
-    button {
-      background-color: ${(props) => props.theme.secondaryColor};
-      color: #fff;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+    .skill-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: #666;
+      flex-grow: 1; /* Garante que todos os cards tenham a mesma altura */
+    }
 
-      &:hover {
-        background-color: ${(props) =>
-          (props.theme as any).secondaryHover || '#555'};
+    /* Botão "Saiba Mais" como link simples */
+    .card-button {
+      background: none;
+      color: #10c058; /* Cor verde principal da sua landing page */
+      border: 1px solid #10c058;
+      padding: 8px 20px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      font-weight: 600;
+    }
+
+    .card-button:hover {
+      background-color: #10c058;
+      color: #fff;
+    }
+
+    /* Seção de Benefícios (Subtítulo da imagem) */
+    /* Removemos esta parte do styles, pois ela pertence ao componente Benefits! */
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .skill-card {
+        width: calc(50% - 20px); /* Dois cards por linha */
+        min-width: 280px;
       }
     }
-  }
 
-  .icon {
-    font-size: 5rem;
-    color: ${(props) => props.theme.secondaryColor};
-    margin-bottom: 1rem;
-  }
+    @media (max-width: 600px) {
+      .skill-card {
+        width: 100%; /* Um card por linha */
+        padding: 20px;
+      }
 
-  .section-subtitle {
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 2rem;
-    color: black;
-  }
-
-  @media (max-width: 768px) {
-    .skill-card {
-      width: 90%;
-      padding: 1.5rem;
-    }
-
-    .icon {
-      font-size: 4rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-    }
-
-    p {
-      font-size: 1rem;
+      .section-title {
+        font-size: 1.8rem;
+      }
     }
   }
 `;
