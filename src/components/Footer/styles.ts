@@ -19,8 +19,8 @@ const Container = styled.div`
 
   footer p {
     font-size: 2rem;
-    font-weight: 600;
-    color: ${(props) => props.theme.secondaryColor};
+    font-weight: 500;
+    color: ${(props) => props.theme.white};
     margin: 0;
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +35,7 @@ const Container = styled.div`
   footer .container {
     height: 9rem;
     width: 100%;
-    background-color: ${(props) => props.theme.black};
+    background-color: ${(props) => props.theme.white};
     padding: 2rem;
     text-align: center;
     @media (max-width: 930px) {

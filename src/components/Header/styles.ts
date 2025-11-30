@@ -8,10 +8,14 @@ const Container = styled.div`
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
+    height: auto;
+    object-fit: contain;
   }
 
   #logo img {
     width: 250px; /* Tamanho da logo ajustado */
+    padding: 20px;
+    padding-top: 40px;
 
     height: auto;
     opacity: 0.9; /* Adiciona transparência */
@@ -26,10 +30,10 @@ const Container = styled.div`
     padding: 3em 0;
     z-index: 2;
     transition: 0.3s ease-in-out;
-    background-color: white;
+    background-color: #f8f9fa; /* Cor de fundo padrão alterada aqui */
 
     &.active {
-      background-color: rgba(234, 238, 240, 0.62);
+      background-color: #f8f9fa; /* Cor de fundo com rolagem alterada aqui */
       border-bottom: 1px solid ${(props) => props.theme.secondaryColor};
       backdrop-filter: blur(0.8rem);
       padding: 2rem 0;

@@ -2,14 +2,17 @@
 import React from 'react';
 import styled from 'styled-components';
 // ... Definição do Styled-Component Container na seção 2.
-import Container from '../About/styles';
+import Container from './styles';
+import marcelloRodrigo from '../../assets/images/marcelo comercial.jpg'; // Renomeado para clareza
+import marceloWanderley from '../../assets/images/marcelo.jpeg'; // ATENÇÃO: Substitua pelo caminho da foto correta
+
 // Dados dos Engenheiros
 const profiles = [
   {
     role: 'Responsável Técnico',
     name: 'Eng. Marcello Rodrigo Cavalcante da Silva',
     crea: 'CREA-PE 49770 e CREA-BA 300416',
-    photoSrc: '/caminho/para/foto-tecnico.jpg', // Ajuste este caminho
+    photoSrc: marceloWanderley,
     qualifications: [
       '18+ anos de experiência em engenharia civil e diagnóstica.',
       'Especialista em laudos técnicos, inspeções prediais e fiscalização de obras.',
@@ -21,7 +24,7 @@ const profiles = [
   {
     role: 'Diretor Comercial',
     name: 'Marcelo Wanderley',
-    photoSrc: '/caminho/para/foto-comercial.jpg', // Ajuste este caminho
+    photoSrc: marcelloRodrigo,
     qualifications: [
       'Gestão comercial e relacionamento com o cliente.',
       'Ponto de contato principal para novos projetos.',

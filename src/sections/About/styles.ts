@@ -11,19 +11,19 @@ const Container = styled.div`
     margin: 0 auto;
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 30px;
+    padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
   }
 
   /* Estilo para cada linha de perfil (Marcello vs Marcelo) */
   .profile-row {
     margin-bottom: 20px;
-    padding: 20px 0;
+    padding: 30px 0;
 
     /* Configuração interna do Flexbox */
     .profile-info {
       display: flex;
-      gap: 25px;
+      gap: 40px;
       align-items: center;
       width: 100%;
 
@@ -74,8 +74,8 @@ const Container = styled.div`
   }
 
   .engineer-photo {
-    width: 100px;
-    height: 100px;
+    width: 150px; /* Tamanho da foto aumentado */
+    height: 150px; /* Tamanho da foto aumentado */
     object-fit: cover;
     border-radius: 50%;
   }
@@ -91,21 +91,21 @@ const Container = styled.div`
   }
 
   .role {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Tamanho da fonte aumentado */
     font-weight: 700;
     color: #10c058; /* Cor verde para o cargo/título */
     margin-bottom: 5px;
   }
 
   .name {
-    font-size: 1.15rem;
+    font-size: 1.5rem; /* Tamanho da fonte aumentado */
     font-weight: 800;
     color: #333;
     margin: 0;
   }
 
   .crea {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Tamanho da fonte aumentado */
     color: #777;
     margin-bottom: 15px;
   }
@@ -118,7 +118,7 @@ const Container = styled.div`
   }
 
   .qualification-list li {
-    font-size: 0.95rem;
+    font-size: 1.1rem; /* Tamanho da fonte aumentado */
     color: #555;
     line-height: 1.6;
 

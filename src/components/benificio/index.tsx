@@ -36,12 +36,7 @@ const benefits = [
     description:
       'Sua satisfação é nossa prioridade. Oferecemos soluções personalizadas e transparentes.',
   },
-  {
-    icon: <FaStar />,
-    title: 'Excelência Técnica',
-    description:
-      'Nossa equipe é formada por profissionais altamente qualificados para entregar os melhores resultados.',
-  },
+
 ];
 
 // Styled-Component

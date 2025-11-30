@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 import Container from './styles';
 import { FaWhatsapp } from 'react-icons/fa';
-import chat from '../../assets/images/chat.png';
+import chat from '../../assets/images/segplan2.png';
 
 export default function Header() {
   const [active, setMode] = useState(false);
