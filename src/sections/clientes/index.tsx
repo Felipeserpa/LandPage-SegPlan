@@ -28,7 +28,15 @@ const faqData = [
 ];
 
 // Componente individual do item do Acordeão
-const AccordionItem = ({ item, isOpen, onClick }) => {
+const AccordionItem = ({
+  item,
+  isOpen,
+  onClick,
+}: {
+  item: { question: string; answer: string };
+  isOpen: boolean;
+  onClick: () => void;
+}) => {
   const Icon = isOpen ? FaChevronUp : FaChevronDown;
   return (
     <FAQItemContainer>
@@ -45,9 +53,9 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
 
 // Componente Principal
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null); // Estado para controlar qual item está aberto
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // Estado para controlar qual item está aberto
 
-  const handleToggle = (index) => {
+  const handleToggle = (index: number) => {
     // Se o item clicado já estiver aberto, feche. Senão, abra o item clicado.
     setOpenIndex(index === openIndex ? null : index);
   };
