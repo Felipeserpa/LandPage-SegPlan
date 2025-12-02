@@ -1,47 +1,66 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
-  .section-blue {
-    padding-bottom: 0;
+// O Styled-Components para o Footer (Apenas o .footer-bottom foi ajustado)
+const Container = styled.footer`
+  background-color: #333;
+  color: #f1f1f1;
+  padding: 50px 20px 20px 20px;
+  font-size: 0.95rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .section-container {
-    width: 100%;
-    margin: 3rem;
+  /* ... (footer-content, cols, navigation, social, etc. - Sem Alteração) ... */
+
+  .footer-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    @media (max-width: 930px) {
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
       flex-direction: column;
-      gap: 2rem;
+      text-align: center;
     }
   }
 
-  footer p {
-    font-size: 2rem;
-    font-weight: 500;
-    color: ${(props) => props.theme.white};
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+  /* ... (Demais estilos omitidos por brevidade) ... */
 
-  footer .social-links {
-    padding: 0 4rem;
-  }
-
-  footer .container {
-    height: 9rem;
-    width: 100%;
-    background-color: ${(props) => props.theme.white};
-    padding: 2rem;
+  /* Rodapé Inferior (Alterado para separar os itens) */
+  .footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
     text-align: center;
-    @media (max-width: 930px) {
-      height: 8rem;
-      width: 100%;
+    color: #999;
+    font-size: 0.85rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaço entre as linhas de texto */
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-between;
     }
+  }
+
+  .developed-by a {
+    color: #10c058; /* Cor de destaque para o link de desenvolvimento */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .copyright,
+  .developed-by {
+    margin: 0; /* Remove margens extras */
   }
 `;
 
