@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 // ... Definição do Styled-Component Container na seção 2.
 import Container from './styles';
-import marcelloRodrigo from '../../assets/images/marcelo comercial.jpg'; // Renomeado para clareza
+import marcelloRodrigo from '../../assets/images/marceloComercial.jpeg'; // Renomeado para clareza
 import marceloWanderley from '../../assets/images/marcelo.jpeg'; // ATENÇÃO: Substitua pelo caminho da foto correta
 
 // Dados dos Engenheiros

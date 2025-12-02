@@ -5,7 +5,7 @@ import segplan from '../../assets/videos/segplan2.mp4';
 // Dados de Exemplo: Substitua os dados e os links pelos seus
 const testimonialsData = [
   {
-    type: 'video',
+    type: 'embed',
     videoUrl: segplan,
     // Substitua pelo link embed do YouTube/Vimeo
     description:
@@ -44,7 +44,7 @@ export default function TestimonialSection() {
             <TestimonialCard key={index}>
               {/* Foto ou Vídeo */}
               <div className="media-area">
-                {t.type === 'video' ? (
+                {t.type === 'embed' ? (
                   <iframe
                     src={segplan}
                     frameBorder="0"
