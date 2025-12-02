@@ -6,6 +6,7 @@ import { FcOrganization } from 'react-icons/fc';
 import Container from './styles'; // Styled-Components
 
 import Benefits from '../../components/benificio'; // Componente de Benefícios
+import Albuns from '../../components/NossoClient'; // Componente de Benefícios
 
 const services = [
   {
@@ -57,6 +58,8 @@ export default function ServicesSection() {
                 </div>
               ))}
             </div>
+            <p>Fotos</p>
+            <Albuns />
             {/* O SUBTÍTULO 'SEUS BENEFÍCIOS' SERÁ TRATADO DENTRO DO COMPONENTE <Benefits /> */}
             <Benefits />
           </div>

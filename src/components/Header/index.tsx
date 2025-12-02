@@ -53,17 +53,17 @@ export default function Header() {
               }}
             >
               <li>
-                <a href="#inicio">Serviços</a>
+                <a href="#inicio">Home</a>
               </li>
               <li>
-                <a href="#skills">Beneficios</a>
+                <a href="#skills">Serviços</a>
               </li>
 
               <li>
-                <a href="#skills">Sobre</a>
+                <a href="#skills">Galeria</a>
               </li>
               <li>
-                <a href="#contact">FAQ</a>
+                <a href="#contact">Contato</a>
               </li>
             </ul>
 

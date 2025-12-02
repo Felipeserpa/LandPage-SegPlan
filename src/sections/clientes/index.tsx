@@ -32,7 +32,7 @@ const testimonialsData = [
 export default function TestimonialSection() {
   return (
     <Container>
-      <div className="container">
+      <div className="container" id="sobre">
         <h2 className="section-title">Confiança Comprovada</h2>
         <p className="section-subtitle">
           O que nossos clientes dizem sobre a qualidade e precisão dos nossos

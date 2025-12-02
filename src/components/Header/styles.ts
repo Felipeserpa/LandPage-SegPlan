@@ -7,58 +7,58 @@ const Container = styled.div`
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 20;
-    height: auto;
-    object-fit: contain;
+    z-index: 50;
   }
 
   #logo img {
-    width: 250px; /* Tamanho da logo ajustado */
-    padding: 20px;
-    padding-top: 40px;
-
+    width: 220px;
+    padding: 15px 0;
     height: auto;
-    opacity: 0.9; /* Adiciona transparência */
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0.95;
+    transition: 0.3s;
+
+    @media (max-width: 930px) {
+      width: 160px; /* Reduz para caber melhor no mobile */
+      padding: 10px 0;
+    }
   }
 
+  /* HEADER FIXO */
   .header {
     position: fixed;
+    top: 0;
     width: 100%;
+    padding: 2.5rem 0;
     display: flex;
     justify-content: center;
-    padding: 3em 0;
-    z-index: 2;
+    background: #f8f9fa;
+    z-index: 40;
     transition: 0.3s ease-in-out;
-    background-color: #f8f9fa; /* Cor de fundo padrão alterada aqui */
 
     &.active {
-      background-color: #f8f9fa; /* Cor de fundo com rolagem alterada aqui */
-      border-bottom: 1px solid ${(props) => props.theme.secondaryColor};
-      backdrop-filter: blur(0.8rem);
-      padding: 2rem 0;
+      padding: 1.2rem 0;
+      background: rgba(248, 249, 250, 0.9);
+      backdrop-filter: blur(10px);
 
       @media (max-width: 930px) {
-        padding: 0.5rem 0;
+        padding: 0.8rem 0;
       }
     }
   }
 
   nav {
-    max-width: 1280px; /* Corrigido: antes era 250px */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* já que a logo está fixa */
+    max-width: 1280px;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
     padding: 0 2rem;
 
     @media (max-width: 930px) {
-      justify-content: flex-end;
-      padding: 2rem;
+      padding: 0 1.5rem;
     }
   }
 
+  /* MENU DESKTOP */
   .nav-menu {
     display: flex;
     align-items: center;
@@ -69,84 +69,87 @@ const Container = styled.div`
       position: fixed;
       right: -100%;
       top: 0;
-      padding: 30px 0 86px;
+      height: 100vh;
+      width: 80%;
+      padding: 120px 0 40px;
+      background: ${(props) => props.theme.primaryColor};
       flex-direction: column;
-      background-color: ${(props) => props.theme.primaryColor};
-      width: 100%;
-      text-align: center;
-      transition: 0.4s;
-      z-index: 2;
+      gap: 30px;
+      transition: 0.4s ease;
+      z-index: 90;
+      backdrop-filter: blur(8px);
     }
   }
 
   nav ul {
     list-style: none;
-    font-size: 1.7rem;
-    font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 2rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    @media (max-width: 930px) {
+      flex-direction: column;
+      gap: 25px;
+      font-size: 2.6rem;
+    }
   }
 
   nav ul a {
     color: ${(props) => props.theme.secondaryColor};
-    padding: 1.5rem 2rem;
-    transition: 0.4s;
+    padding: 1rem 1.5rem;
+    transition: 0.3s;
+
+    &:hover {
+      color: ${(props) => props.theme.secondaryColorHover};
+    }
+
+    @media (max-width: 930px) {
+      color: #0f0e0eff;
+    }
   }
 
-  nav ul a:hover {
-    color: ${(props) => props.theme.secondaryColorHover};
-  }
-
+  /* HAMBURGER */
   .hamburger {
     display: none;
 
     @media (max-width: 930px) {
-      display: block;
-      position: fixed; /* Para não ficar atrás da logo */
-      right: 30px;
-      top: 20px;
-      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      position: fixed;
+      top: 22px;
+      right: 25px;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      z-index: 200; /* mais alto que logo e menu */
     }
   }
 
   .bar {
-    display: block;
-    width: 30px;
+    width: 100%;
     height: 4px;
-    margin: 6px auto;
-    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
     background-color: ${(props) => props.theme.secondaryColor};
-  }
-
-  .bar:nth-child(2) {
-    width: 20px;
+    transition: 0.3s ease-in-out;
   }
 
   @media (max-width: 930px) {
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
     .hamburger.active .bar:nth-child(2) {
       opacity: 0;
     }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(10px) rotate(-45deg);
-    }
-
     .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-10px) rotate(45deg);
+      transform: translateY(-10px) rotate(-45deg);
     }
 
     .nav-menu.active {
-      opacity: 1;
       right: 0;
-    }
-
-    .nav-menu ul {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin: 70px 0 50px 0;
-      font-size: 3rem;
     }
   }
 `;
