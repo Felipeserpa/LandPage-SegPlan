@@ -6,7 +6,6 @@ const Container = styled.div`
   .section-white {
     background-color: #f9f9f9; /* Fundo cinza claro como na imagem */
     padding: 10px;
-
     .section-title {
       font-size: 2rem;
       font-weight: 800;
@@ -36,6 +35,7 @@ const Container = styled.div`
       flex-wrap: wrap;
       justify-content: center;
       gap: 25px; /* Espaçamento entre os cards */
+      align-items: stretch; /* Garante que os cards na mesma linha tenham a mesma altura */
       width: 100%;
     }
 
@@ -45,7 +45,9 @@ const Container = styled.div`
       background-color: #ffffff;
       border-radius: 12px;
       padding: 30px 25px;
-      width: 320px; /* Tamanho fixo para desktop, mais próximo da imagem */
+      flex-basis: 320px; /* Base de largura para cada card */
+      flex-grow: 1; /* Permite que o card cresça se houver espaço */
+      max-width: 450px; /*Largura máxima para evitar que fiquem muito grandes */
       margin: 0; /* Removido o margin-left que estava desalinhando */
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
@@ -65,7 +67,7 @@ const Container = styled.div`
     .icon-wrapper {
       background-color: #e6f0ff; /* Cor azul claro como na imagem */
       border-radius: 50%;
-      padding: 15px;
+      padding: 40px;
       margin-bottom: 15px;
       display: inline-flex;
       align-items: center;
@@ -117,14 +119,13 @@ const Container = styled.div`
     /* Responsividade */
     @media (max-width: 992px) {
       .skill-card {
-        width: calc(50% - 20px); /* Dois cards por linha */
-        min-width: 280px;
+        flex-basis: 280px; /* Ajusta a base de largura para telas menores */
       }
     }
 
     @media (max-width: 600px) {
       .skill-card {
-        width: 100%; /* Um card por linha */
+        flex-basis: 100%; /* Um card por linha */
         padding: 20px;
       }
 

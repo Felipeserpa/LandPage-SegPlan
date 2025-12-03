@@ -1,69 +1,79 @@
 import React from 'react';
 import styled from 'styled-components';
+import segplan0 from './../../assets/images/galeria/segplan0.jpg';
+import segplan1 from './../../assets/images/galeria/segplan01.jpg';
+import segplan2 from './../../assets/images/galeria/segplan02.jpg';
+import segplan3 from './../../assets/images/galeria/segplan03.jpg';
+import segplan4 from './../../assets/images/galeria/segplan04.jpg';
+import segplan5 from './../../assets/images/galeria/segplan05.jpg';
+import segplan6 from './../../assets/images/galeria/segplan006.jpg';
+import segplan8 from './../../assets/images/galeria/segplan07.jpg';
+import segplan9 from './../../assets/images/galeria/segplan08.jpg';
+import segplan10 from './../../assets/images/galeria/segplan09.jpg';
 
 // Dados de Exemplo para a Galeria de Fotos
 // Aumentado para 10 itens para criar a grade 5x2
 const portfolioItems = [
   {
     id: 1,
-    src: '/images/portfolio-01.jpg',
+    src: segplan0,
     alt: 'Inspeção Predial em Fachada',
     category: 'Inspeção',
   },
   {
     id: 2,
-    src: '/images/portfolio-02.jpg',
+    src: segplan1,
     alt: 'Laudo de Vistoria de Vizinhança',
     category: 'Vizinhança',
   },
   {
     id: 3,
-    src: '/images/portfolio-03.jpg',
+    src: segplan2,
     alt: 'Perícia de Patologia em Concreto',
     category: 'Perícia',
   },
   {
     id: 4,
-    src: '/images/portfolio-04.jpg',
+    src: segplan3,
     alt: 'Laudo de Estabilidade Estrutural',
     category: 'Estrutural',
   },
   {
     id: 5,
-    src: '/images/portfolio-05.jpg',
+    src: segplan4,
     alt: 'Termografia em Instalações',
     category: 'Ensaios',
   },
   // Novos itens adicionados para completar as 10 fotos
   {
     id: 6,
-    src: '/images/portfolio-06.jpg',
+    src: segplan5,
     alt: 'Vistoria de Recebimento de Obra',
     category: 'Vistoria',
   },
   {
     id: 7,
-    src: '/images/portfolio-07.jpg',
+    src: segplan6,
     alt: 'Inspeção de Telhado',
     category: 'Inspeção',
   },
   {
     id: 8,
-    src: '/images/portfolio-08.jpg',
+    src: segplan10,
     alt: 'Laudo de Patologia em Pintura',
     category: 'Perícia',
   },
   {
     id: 9,
-    src: '/images/portfolio-09.jpg',
+    src: segplan8,
     alt: 'Acompanhamento de Fundação',
     category: 'Estrutural',
   },
   {
     id: 10,
-    src: '/images/portfolio-10.jpg',
-    alt: 'Ensaios de Ultrassom em Concreto',
-    category: 'Ensaios',
+    src: segplan9,
+
+    category: 'escritório',
   },
 ];
 
@@ -104,7 +114,8 @@ export default function PortfolioSection() {
 // -------------------------------------------------------------
 
 const Container = styled.div`
-  padding: 80px 20px;
+  padding: 9px 20px;
+  text-align: center;
   background-color: #f7f7f7; /* Fundo claro para destacar a galeria */
 
   .container {
@@ -125,6 +136,15 @@ const Container = styled.div`
     text-align: center;
     color: #666;
     margin-bottom: 40px;
+
+    font-weight: 500;
+    //deixar responsivo
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
+
+  .category-tag {
   }
 
   /* Estilos para o botão de contato no final da galeria */
@@ -176,7 +196,7 @@ const GalleryGrid = styled.div`
   }
 
   @media (max-width: 500px) {
-    /* Em telas pequenas (mobile), usa 1 coluna para melhor visualização */
+    /* Em telas muito pequenas (mobile), usa 1 coluna para melhor visualização */
     grid-template-columns: 1fr;
   }
 `;
@@ -192,7 +212,7 @@ const GalleryItem = styled.div`
   img {
     width: 100%;
     /* Reduzindo a altura fixa para caber 5 colunas lado a lado */
-    height: 200px;
+    height: 250px;
     object-fit: cover; /* Recorta a imagem para preencher */
     display: block;
     transition: transform 0.4s ease-in-out;

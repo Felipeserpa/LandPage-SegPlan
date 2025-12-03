@@ -7,6 +7,9 @@ import Container from './styles'; // Styled-Components
 
 import Benefits from '../../components/benificio'; // Componente de Benefícios
 import Albuns from '../../components/NossoClient'; // Componente de Benefícios
+import { FaBomb } from 'react-icons/fa';
+import icone01 from '../../assets/images/icone1.png';
+import icone02 from '../../assets/images/icone2.png';
 
 const services = [
   {
@@ -30,6 +33,20 @@ const services = [
     description:
       'Documentos essenciais para comprovar o estado da edificação e conformidade.',
   },
+  {
+    // Usando BsDropletFill (Ícone genérico - Adaptei para Laudos)
+    src: icone01,
+    title: 'Alvarás de localização e funcionamento',
+    description:
+      'Legalize seu negócio com o Alvará de Funcionamento. Garantia de conformidade e segurança.',
+  },
+  {
+    // Usando BsDropletFill (Ícone genérico - Adaptei para Laudos)
+    src: icone02,
+    title: ' AVCB dos Bombeiros',
+    description:
+      'AVCB: Segurança e conformidade garantida. Proteja seu patrimônio com nosso serviço especializado.',
+  },
 ];
 
 export default function ServicesSection() {
@@ -51,14 +68,19 @@ export default function ServicesSection() {
             <div id="skills-container" data-aos="fade-up">
               {services.map((service, index) => (
                 <div className="skill-card" key={index}>
-                  <div className="icon-wrapper">{service.icon}</div>
+                  <div className="icon-wrapper">
+                    {service.src ? (
+                      <img src={service.src} alt={service.title} />
+                    ) : (
+                      service.icon
+                    )}
+                  </div>
                   <h2>{service.title}</h2>
                   <p>{service.description}</p>
                   <button className="card-button">Saiba Mais</button>
                 </div>
               ))}
             </div>
-            <p>Fotos</p>
             <Albuns />
             {/* O SUBTÍTULO 'SEUS BENEFÍCIOS' SERÁ TRATADO DENTRO DO COMPONENTE <Benefits /> */}
             <Benefits />

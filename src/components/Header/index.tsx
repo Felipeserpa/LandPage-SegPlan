@@ -63,7 +63,7 @@ export default function Header() {
                 <a href="#skills">Galeria</a>
               </li>
               <li>
-                <a href="#contact">Contato</a>
+                <a href="#contact">Contato </a>
               </li>
             </ul>
 
