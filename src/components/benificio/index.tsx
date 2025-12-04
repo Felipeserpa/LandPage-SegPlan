@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import VideoPlayer from '../player'; // Importando o componente de vídeo
 import segplan0 from './../../assets/images/galeria/segplan0.jpg';
 import segplan1 from './../../assets/images/galeria/segplan01.jpg';
 import segplan2 from './../../assets/images/galeria/segplan02.jpg';
@@ -11,35 +12,42 @@ import segplan8 from './../../assets/images/galeria/segplan07.jpg';
 import segplan9 from './../../assets/images/galeria/segplan08.jpg';
 import segplan10 from './../../assets/images/galeria/segplan09.jpg';
 
+import segplan11 from '../../assets/videos/Sem título.mp4';
+
 // Dados de Exemplo para a Galeria de Fotos
 // Aumentado para 10 itens para criar a grade 5x2
 const portfolioItems = [
   {
     id: 1,
+    type: 'image',
     src: segplan0,
     alt: 'Inspeção Predial em Fachada',
     category: 'Inspeção',
   },
   {
     id: 2,
+    type: 'image',
     src: segplan1,
     alt: 'Laudo de Vistoria de Vizinhança',
     category: 'Vizinhança',
   },
   {
     id: 3,
+    type: 'image',
     src: segplan2,
     alt: 'Perícia de Patologia em Concreto',
     category: 'Perícia',
   },
   {
     id: 4,
+    type: 'image',
     src: segplan3,
     alt: 'Laudo de Estabilidade Estrutural',
     category: 'Estrutural',
   },
   {
     id: 5,
+    type: 'image',
     src: segplan4,
     alt: 'Termografia em Instalações',
     category: 'Ensaios',
@@ -47,39 +55,43 @@ const portfolioItems = [
   // Novos itens adicionados para completar as 10 fotos
   {
     id: 6,
+    type: 'image',
     src: segplan5,
     alt: 'Vistoria de Recebimento de Obra',
     category: 'Vistoria',
   },
   {
     id: 7,
+    type: 'image',
     src: segplan6,
     alt: 'Inspeção de Telhado',
     category: 'Inspeção',
   },
   {
     id: 8,
+    type: 'image',
     src: segplan10,
     alt: 'Laudo de Patologia em Pintura',
     category: 'Perícia',
   },
   {
     id: 9,
+    type: 'image',
     src: segplan8,
     alt: 'Acompanhamento de Fundação',
     category: 'Estrutural',
   },
   {
     id: 10,
+    type: 'image',
     src: segplan9,
-
     category: 'escritório',
   },
 ];
 
 export default function PortfolioSection() {
   return (
-    <Container id="portfolio">
+    <Container id="Galeria">
       <div className="container">
         <h2 className="section-title">Galeria de Vistorias e Laudos</h2>
         <p className="section-subtitle">
@@ -89,16 +101,22 @@ export default function PortfolioSection() {
 
         <GalleryGrid>
           {portfolioItems.map((item) => (
-            <GalleryItem key={item.id}>
+            <GalleryItem
+              key={item.id}
+              className={item.type === 'embed' ? 'video-item' : ''}
+            >
               <img src={item.src} alt={item.alt} />
-              <div className="overlay">
-                <span className="category-tag">{item.category}</span>
-                <p className="description">{item.alt}</p>
-              </div>
             </GalleryItem>
           ))}
         </GalleryGrid>
-
+        <iframe
+          className="video"
+          id="video"
+          src={segplan11}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title={`Vídeo Institucional da SEGPLAN`}
+        ></iframe>
         <div className="cta-contact-wrapper">
           <a href="#contact" className="cta-contact-button">
             Solicite Seu Orçamento Agora
@@ -121,6 +139,16 @@ const Container = styled.div`
   .container {
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .video {
+    width: 45%;
+    height: 480px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
   }
 
   .section-title {
@@ -207,6 +235,11 @@ const GalleryItem = styled.div`
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+
+  /* Ajuste para o container do vídeo preencher o item da galeria */
+  &.video-item {
+    height: 250px; /* Mesma altura das imagens */
+  }
 
   /* Garante que a imagem preencha o container */
   img {
