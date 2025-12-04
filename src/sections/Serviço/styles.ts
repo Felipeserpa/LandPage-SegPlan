@@ -77,7 +77,10 @@ const Container = styled.div`
     /* Estilo do Ícone */
     .service-icon {
       font-size: 2.5rem; /* Ajustado para um tamanho maior */
-      color: #007bff; /* Cor azul de destaque no ícone */
+
+      width: 50px;
+      height: 50px;
+      color: #065828ff;
     }
 
     .skill-card h2 {
