@@ -91,10 +91,12 @@ export default function ServicesSection() {
                   </a>
                 </div>
               ))}
-            </div>
+            </div>{' '}
             <Albuns />
+            <div id="skills">
+              <Benefits />
+            </div>
             {/* O SUBTÍTULO 'SEUS BENEFÍCIOS' SERÁ TRATADO DENTRO DO COMPONENTE <Benefits /> */}
-            <Benefits />
           </div>
         </div>
       </section>
