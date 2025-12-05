@@ -70,9 +70,9 @@ const Container = styled.div`
       right: -100%;
       top: 0;
       height: 100vh;
-      width: 80%;
+      width: 60%;
       padding: 120px 0 40px;
-      background: ${(props) => props.theme.primaryColor};
+      background: ${(props) => props.theme.grey};
       flex-direction: column;
       gap: 30px;
       transition: 0.4s ease;
@@ -122,10 +122,15 @@ const Container = styled.div`
       position: fixed;
       top: 22px;
       right: 25px;
-      width: 35px;
-      height: 35px;
+      width: 45px; /* Aumentado para o fundo */
+      height: 45px; /* Aumentado para o fundo */
       cursor: pointer;
-      z-index: 200; /* mais alto que logo e menu */
+      z-index: 200;
+
+      /* ⭐️ ESTILOS DO BACKGROUND DO HAMBURGER ⭐️ */
+      /* COR DE FUNDO (EX: AZUL) - Mude para a cor que desejar! */
+      border-radius: 8px; /* Cantos arredondados */
+      padding: 5px; /* Espaço interno para as barras */
     }
   }
 
@@ -133,6 +138,7 @@ const Container = styled.div`
     width: 100%;
     height: 4px;
     border-radius: 4px;
+    /* Use a cor do tema, ou #fff se o background do hamburger for escuro para melhor contraste */
     background-color: ${(props) => props.theme.secondaryColor};
     transition: 0.3s ease-in-out;
   }

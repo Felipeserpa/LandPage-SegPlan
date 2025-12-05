@@ -68,25 +68,31 @@ export default function Header() {
             </ul>
 
             <div className="cta-container">
-              <a href="https://wa.me/message/VOG6YD5POXPPG1" className="cta">
-                <button
-                  type="button"
-                  style={{
-                    backgroundColor: '#017410',
-                    color: 'white',
-                    border: 'none',
-                    padding: '12px 20px',
-                    fontSize: '18px',
-                    borderRadius: '5px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  Agende um horário conosco{' '}
-                  <FaWhatsapp style={{ fontSize: '22px' }} />
-                </button>
+              <a
+                href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="cta">
+                  <button
+                    type="button"
+                    style={{
+                      backgroundColor: '#017410',
+                      color: 'white',
+                      border: 'none',
+                      padding: '12px 20px',
+                      fontSize: '18px',
+                      borderRadius: '5px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Agende um horário conosco{' '}
+                    <FaWhatsapp style={{ fontSize: '22px' }} />
+                  </button>
+                </div>
               </a>
             </div>
           </div>
