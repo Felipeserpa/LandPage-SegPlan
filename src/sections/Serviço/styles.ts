@@ -1,140 +1,118 @@
-// Seu arquivo styles.js
 import styled from 'styled-components';
 
 const Container = styled.div`
-  /* Estilos Globais da Seção */
-  .section-white {
-    background-color: #f9f9f9; /* Fundo cinza claro como na imagem */
-    padding: 10px;
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-      text-transform: uppercase;
-    }
+  #services {
+    background: #f8f8f8;
+    padding: 10px 0;
+  }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+  .container {
+    width: min(1200px, 92%);
+    margin: auto;
+  }
 
-    .services-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3rem;
-    }
+  .section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #0b1d10;
+  }
 
-    /* Container dos Cards */
+  /* 📌 4 por linha desktop */
+  #skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+
+  /* CARD */
+  .skill-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 430px; /* 🔥 padroniza todos no mesmo tamanho */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* mantém botão alinhado embaixo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 🔥 imagem 100% sem cortar */
+  .icon-wrapper {
+    width: 100%;
+    height: 200px;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-wrapper img {
+    width: 150%;
+    height: 100%;
+    object-fit: contain; /* mostra a imagem completa */
+    padding-top: 1%;
+  }
+
+  /* 📌 Conteúdo igual para todos */
+  .card-content {
+    padding: 18px 20px;
+    flex-grow: 1;
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0b1d10;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+    color: #444;
+    height: 75px; /* 🔥 controla altura do texto */
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* botão AGORA TODOS IGUAIS */
+  .card-button {
+    background: #25d366; /* Verde WhatsApp */
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 18px; /* 🔥 fino e menor */
+    border-radius: 6px; /* elegante */
+    margin: 15px auto 50px auto; /* 👈 Centralizado e igual em todos */
+    display: block;
+    width: fit-content; /* tamanho exato do botão */
+    letter-spacing: 0.4px;
+    transition: 0.25s ease-in-out;
+  }
+
+  .card-button:hover {
+    background: #1ebe5d; /* Tom mais forte no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  }
+
+  /* 📌 Responsivo */
+  @media (max-width: 1024px) {
     #skills-container {
-      /* Mantido o ID para não quebrar seu código */
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px; /* Espaçamento entre os cards */
-      align-items: stretch; /* Garante que os cards na mesma linha tenham a mesma altura */
-      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
 
-    /* Estilo do Card Individual */
-    .skill-card {
-      /* O card na imagem é branco, sem gradiente forte */
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 30px 25px;
-      flex-basis: 320px; /* Base de largura para cada card */
-      flex-grow: 1; /* Permite que o card cresça se houver espaço */
-      max-width: 450px; /*Largura máxima para evitar que fiquem muito grandes */
-      margin: 0; /* Removido o margin-left que estava desalinhando */
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
-      transition: transform 0.3s, box-shadow 0.3s;
-      /* Adiciona flexbox para garantir que o conteúdo se alinhe verticalmente */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Wrapper para o círculo do ícone */
-    .icon-wrapper {
-      background-color: #e6f0ff; /* Cor azul claro como na imagem */
-      border-radius: 50%;
-      padding: 40px;
-      margin-bottom: 15px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Estilo do Ícone */
-    .service-icon {
-      font-size: 2.5rem; /* Ajustado para um tamanho maior */
-
-      width: 50px;
-      height: 50px;
-      color: #065828ff;
-    }
-
-    .skill-card h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin: 10px 0;
-      color: #333;
-    }
-
-    .skill-card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 20px;
-      color: #666;
-      flex-grow: 1; /* Garante que todos os cards tenham a mesma altura */
-    }
-
-    /* Botão "Saiba Mais" como link simples */
-    .card-button {
-      background: none;
-      color: #10c058; /* Cor verde principal da sua landing page */
-      border: 1px solid #10c058;
-      padding: 8px 20px;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-      font-weight: 600;
-    }
-
-    .card-button:hover {
-      background-color: #10c058;
-      color: #fff;
-    }
-
-    /* Seção de Benefícios (Subtítulo da imagem) */
-    /* Removemos esta parte do styles, pois ela pertence ao componente Benefits! */
-
-    /* Responsividade */
-    @media (max-width: 992px) {
-      .skill-card {
-        flex-basis: 280px; /* Ajusta a base de largura para telas menores */
-      }
-    }
-
-    @media (max-width: 600px) {
-      .skill-card {
-        flex-basis: 100%; /* Um card por linha */
-        padding: 20px;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
+  @media (max-width: 700px) {
+    #skills-container {
+      grid-template-columns: 1fr;
     }
   }
 `;

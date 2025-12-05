@@ -168,16 +168,14 @@ export default function Footer() {
           {/* Coluna 1: Logo e Informações de Contato */}
           <div className="col logo-info">
             <h4 className="logo-name">SEGPLAN</h4>
-            <p className="tagline">
-              Engenharia Diagnóstica e Segurança Predial
-            </p>
+            <p className="tagline">Laudos Projetos e Fiscalizações</p>
 
             <div className="contact-info">
               <p>
-                <FaEnvelope /> contato@segplan.seg.br
+                <FaEnvelope /> segplanengenharia@gmail.com
               </p>
               <p>
-                <FaWhatsapp /> (81) 9 XXXX-XXXX
+                <FaWhatsapp /> (81) 9 98928.2737
               </p>
             </div>
           </div>
