@@ -11,13 +11,12 @@ const profiles = [
   {
     role: 'Responsável Técnico',
     name: 'Eng. Marcello Rodrigo Cavalcante da Silva',
-    crea: 'CREA-PE 49770 e CREA-BA 300416',
+    crea: 'CREA Nº 181039919-0.',
     photoSrc: marceloWanderley,
     qualifications: [
-      '18+ anos de experiência em engenharia civil e diagnóstica.',
-      'Especialista em laudos técnicos, inspeções prediais e fiscalização de obras.',
-      'Valoriza o atendimento de vistoria.',
-      'Garantia de máxima precisão e conformidade técnica.',
+      ' Engenheiro Civil e de Segurança do Trabalho, Perito Judicial Federal, Estadual e Trabalhista.',
+      'Especialista em Gerenciamento de Obras, Tecnologia e Qualidade da Construção ',
+      'Especialista em Auditoria, Avaliações e Perícias de Engenharia Especialista em Engenharia Diagnóstica ',
     ],
     isReversed: false, // Foto Esquerda | Texto Direita
   },

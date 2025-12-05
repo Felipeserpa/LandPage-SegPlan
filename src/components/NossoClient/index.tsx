@@ -1,18 +1,40 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-// Dados de Exemplo: Substitua os caminhos pelas URLs/caminhos dos logos dos seus clientes.
-// Certifique-se de ter os arquivos de logo dentro da sua pasta 'public' ou 'assets'.
+import logo01 from '../../assets/images/cliente/LOGO (1).png';
+import logo02 from '../../assets/images/cliente/LOGO (2).png';
+import logo03 from '../../assets/images/cliente/LOGO (3).png';
+import logo04 from '../../assets/images/cliente/LOGO (4).png';
+import logo05 from '../../assets/images/cliente/LOGO (5).png';
+import logo06 from '../../assets/images/cliente/LOGO (6).png';
+import logo07 from '../../assets/images/cliente/LOGO (7).png';
+import logo08 from '../../assets/images/cliente/LOGO (8).png';
+import logo09 from '../../assets/images/cliente/LOGO (9).png';
+import logo10 from '../../assets/images/cliente/LOGO (10).png';
+import logo12 from '../../assets/images/cliente/LOGO (12).png';
+import logo13 from '../../assets/images/cliente/LOGO (13).png';
+import logo14 from '../../assets/images/cliente/LOGO (14).png';
+import logo15 from '../../assets/images/cliente/LOGO (15).png';
+import logo16 from '../../assets/images/cliente/parvi.png';
+import logo17 from '../../assets/images/cliente/tramontina.png';
+
 const clientLogos = [
-  '/logos/logo-client-01.png', // Exemplo
-  '/logos/logo-client-02.png', // Exemplo
-  '/logos/logo-client-03.png', // Exemplo
-  '/logos/logo-client-04.png', // Exemplo
-  '/logos/logo-client-05.png', // Exemplo
-  '/logos/logo-client-06.png', // Exemplo
-  '/logos/logo-client-07.png', // Exemplo
-  '/logos/logo-client-08.png', // Exemplo
-  '/logos/logo-client-09.png', // Exemplo
+  logo01,
+  logo02,
+  logo03,
+  logo04,
+  logo05,
+  logo06,
+  logo07,
+  logo08,
+  logo09,
+  logo10,
+  logo12,
+  logo13,
+  logo14,
+  logo15,
+  logo16,
+  logo17,
 ];
 
 export default function ClientLogosSection() {
@@ -22,18 +44,17 @@ export default function ClientLogosSection() {
         <h2 className="section-title">
           Nossos Clientes Confiam em Nossa Precisão
         </h2>
+
         <p className="section-subtitle">
-          Empresas e condomínios que garantiram a segurança e a conformidade de
-          seus ativos com a SEGPLAN.
+          Empresas e condomínios que garantiram segurança e conformidade com a
+          SEGPLAN.
         </p>
 
-        {/* Carrossel Infinito de Logos */}
         <LogoMarquee>
           <LogoTrack>
-            {/* Repete os logos para criar o loop contínuo e a sensação de movimento */}
             {[...clientLogos, ...clientLogos].map((logo, index) => (
               <LogoItem key={index}>
-                <img src={logo} alt={`Logo do Cliente ${index + 1}`} />
+                <img src={logo} alt={`Cliente ${index + 1}`} />
               </LogoItem>
             ))}
           </LogoTrack>
@@ -43,84 +64,96 @@ export default function ClientLogosSection() {
   );
 }
 
-// -------------------------------------------------------------
-// STYLED-COMPONENTS (CSS)
-// -------------------------------------------------------------
+/* =============================
+   ⬇️  RESPONSIVIDADE REAL + FLUIDA
+============================== */
 
-const Container = styled.div`
-  padding: 60px 20px;
-  background-color: #ffffff; /* Fundo branco ou claro */
+const Container = styled.section`
+  padding: 6vh 3vw;
+  background: #fff;
   border-top: 1px solid #eee;
 
   .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
   }
 
   .section-title {
-    font-size: 1.8rem;
-    font-weight: 700;
     text-align: center;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.3;
+    margin-bottom: 12px;
   }
 
   .section-subtitle {
-    font-size: 1rem;
     text-align: center;
-    color: #666;
-    margin-bottom: 40px;
+    font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 45px;
+    color: #555;
+    line-height: 1.55;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 45px 15px;
+
+    .section-subtitle {
+      margin-bottom: 30px;
+      line-height: 1.45;
+    }
   }
 `;
 
-// Keyframes para a animação do carrossel
 const scroll = keyframes`
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Move a metade do conjunto de logos */
+  100% { transform: translateX(-50%); }
 `;
 
 const LogoMarquee = styled.div`
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
   white-space: nowrap;
 `;
 
 const LogoTrack = styled.div`
   display: flex;
-  width: fit-content; /* Garante que todos os logos caibam lado a lado */
-  animation: ${scroll} 30s linear infinite; /* 30 segundos de duração */
+  animation: ${scroll} 26s linear infinite;
 
-  /* Pausa a animação ao passar o mouse */
   &:hover {
     animation-play-state: paused;
   }
 `;
 
 const LogoItem = styled.div`
+  flex-shrink: 0;
+  width: 230px;
+  height: 110px;
+  padding: 0 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Largura fixa para cada item no carrossel. */
-  width: 250px;
-  height: 80px;
-  padding: 0 30px;
-  flex-shrink: 0;
 
-  /* Ajuste para mobile */
-  @media (max-width: 640px) {
-    width: 150px;
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 80px;
+  }
+  @media (max-width: 480px) {
+    width: 140px;
+    height: 60px;
   }
 
   img {
     max-width: 100%;
-    max-height: 50px;
-    opacity: 0.6; /* Deixa os logos mais discretos */
-    filter: grayscale(100%); /* Colore os logos em tons de cinza */
-    transition: opacity 0.3s, filter 0.3s;
+    max-height: 60px;
+    transition: 0.3s;
+    filter: grayscale(0%);
+  }
 
-    &:hover {
-      opacity: 1;
-      filter: grayscale(0%); /* Mostra cor ao passar o mouse */
-    }
+  img:hover {
+    transform: scale(1.08);
   }
 `;

@@ -24,7 +24,7 @@ export default function ContactSection() {
 
             <div className="contact-details">
               <a
-                href="https://wa.me/SEUNUMERO"
+                href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link whatsapp"
@@ -35,7 +35,7 @@ export default function ContactSection() {
                 href="mailto:contato@segplan.seg.br"
                 className="contact-link email"
               >
-                <FaEnvelope /> contato@segplan.seg.br
+                <FaEnvelope /> segplanengenharia@gmail.com
               </a>
             </div>
 
@@ -76,9 +76,14 @@ export default function ContactSection() {
                 required
               ></textarea>
 
-              <button type="submit" className="submit-button">
+              <a
+                href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="submit-button"
+              >
                 Solicitar Orçamento Gratuito
-              </button>
+              </a>
             </form>
           </div>
         </div>
