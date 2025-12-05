@@ -118,7 +118,12 @@ export default function PortfolioSection() {
           title={`Vídeo Institucional da SEGPLAN`}
         ></iframe>
         <div className="cta-contact-wrapper">
-          <a href="#contact" className="cta-contact-button">
+          <a
+            href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-contact-button"
+          >
             Solicite Seu Orçamento Agora
           </a>
         </div>
