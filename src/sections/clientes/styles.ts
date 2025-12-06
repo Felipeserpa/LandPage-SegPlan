@@ -82,6 +82,15 @@ export const FAQItemContainer = styled.div`
       line-height: 1.6;
       margin: 0;
     }
+    .client-photo {
+      width: 60%; /* Diminuir a largura da foto */
+      max-width: 120px; /* Tamanho máximo */
+      height: auto; /* Mantém proporção */
+      border-radius: 50%; /* Opcional: deixa redonda */
+      object-fit: cover;
+      display: block;
+      margin: 0 auto; /* Centraliza a foto */
+    }
   }
 `;
 export default Container;

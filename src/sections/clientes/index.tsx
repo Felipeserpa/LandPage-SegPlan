@@ -161,10 +161,13 @@ const TestimonialCard = styled.div`
   }
 
   .client-photo {
-    width: 100%;
-    height: 100%;
+    width: 80%; /* Diminuir a largura da foto */
+    max-width: 140px; /* Tamanho máximo */
+    height: auto; /* Mantém proporção */
+    border-radius: 20%; /* Opcional: deixa redonda */
     object-fit: cover;
     display: block;
+    margin: 0 auto; /* Centraliza a foto */
   }
 
   /* Área do Conteúdo (Texto) */
