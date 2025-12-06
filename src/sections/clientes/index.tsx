@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaQuoteLeft } from 'react-icons/fa';
 import segplan from '../../assets/videos/segplan2.mp4';
+import img from '../../assets/images/imgdep.png';
 // Dados de Exemplo: Substitua os dados e os links pelos seus
 const testimonialsData = [
   {
@@ -14,7 +15,7 @@ const testimonialsData = [
   },
   {
     type: 'photo',
-    photoUrl: '/images/client-photo-01.jpg', // Substitua pelo caminho da foto do cliente
+    photoUrl: img, // Substitua pelo caminho da foto do cliente
     description:
       'Precisávamos dos laudos para AVCB e elétrica do condomínio com urgência, e a Segplan Laudos foi extremamente eficiente. A equipe veio até o local, fez as vistorias com cuidado e entregou o laudo no prazo exato combinado. Toda comunicação foi muito transparente e o suporte pós-entrega foi excepcional. Empresa séria e comprometida com o cliente!',
     author: 'Dra. Juliana S. - Incorporadora Beta',
