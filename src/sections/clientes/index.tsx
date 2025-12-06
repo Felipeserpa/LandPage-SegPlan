@@ -9,21 +9,21 @@ const testimonialsData = [
     videoUrl: segplan,
     // Substitua pelo link embed do YouTube/Vimeo
     description:
-      'A SEGPLAN identificou o problema de infiltração que três outras empresas ignoraram. O laudo foi preciso e resolveu nosso problema rapidamente.',
+      'A Segplan Laudos entrega segurança, confiança e agilidade na execução de laudos técnicos. Trabalhamos com precisão, responsabilidade e foco total na regularização do seu negócio.',
     author: 'Eng. Ricardo M. - Construtora Alpha',
   },
   {
     type: 'photo',
     photoUrl: '/images/client-photo-01.jpg', // Substitua pelo caminho da foto do cliente
     description:
-      'Contratamos a vistoria de vizinhança e ficamos impressionados com o nível de detalhe e profissionalismo. Documentação impecável que nos deu segurança total para iniciar a obra.',
+      'Precisávamos dos laudos para AVCB e elétrica do condomínio com urgência, e a Segplan Laudos foi extremamente eficiente. A equipe veio até o local, fez as vistorias com cuidado e entregou o laudo no prazo exato combinado. Toda comunicação foi muito transparente e o suporte pós-entrega foi excepcional. Empresa séria e comprometida com o cliente!',
     author: 'Dra. Juliana S. - Incorporadora Beta',
   },
   {
     type: 'text',
     photoUrl: '/images/client-photo-02.jpg',
     description:
-      'A inspeção predial preventiva salvou nosso condomínio de gastos enormes no futuro. Serviço altamente recomendado para qualquer síndico que busca tranquilidade.',
+      '"Encontrei a Segplan Laudos por indicação e foi uma das melhores escolhas que fiz para meu negócio. Eles resolveram toda parte técnica e burocrática de forma ágil, sem enrolação e com preço justo. Além disso, me orientaram sobre como manter as normas em dia e evitar problemas futuros.',
     author: 'Sr. Antônio C. - Síndico Condomínio Jardins',
   },
 ];
