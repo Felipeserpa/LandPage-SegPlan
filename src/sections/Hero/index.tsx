@@ -1,175 +1,234 @@
 import React, { useRef, useState } from 'react';
 import { FaPlay, FaPause, FaWhatsapp } from 'react-icons/fa';
 import Container from './styles';
-import moovideos from '../../assets/videos/segplan.mp4';
-import styled from 'styled-components'; // Import styled-components
+import moovideos from '../../assets/videos/segplantest.mp4';
+import styled from 'styled-components';
 
-// Styled-component for the main content box
-const StyledBox = styled.div`
+// Styled-component para o card principal
+const MainCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1100px;
-  background-color: rgba(255, 255, 255, 0.9);
-  background-image: url(/assets/images/Chat.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-blend-mode: luminosity;
-  border-radius: 10px;
-  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 40px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 1s ease-out;
+  gap: 40px;
 
   @media (max-width: 768px) {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    padding: 30px; /* Adjust padding */
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
   }
 
   @media (max-width: 480px) {
-    padding: 20px; /* Further adjust padding for mobile */
+    padding: 20px;
+    gap: 20px;
   }
 `;
 
-// Styled-component for the text content div
-const StyledTextContent = styled.div`
-  width: 45%;
-  text-align: left;
-  padding: 20px;
+// Styled-component para o conteúdo de texto
+const TextContent = styled.div`
+  flex: 1.2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   @media (max-width: 768px) {
-    width: 100%; /* Full width on smaller screens */
-    text-align: center; /* Center text on smaller screens */
-    padding: 10px 0; /* Adjust padding */
+    text-align: center;
+    align-items: center;
   }
 `;
 
-// Styled-component for the H1
-const StyledH1 = styled.h1`
-  font-size: 34px;
+// Styled-component para o título
+const Title = styled.h1`
+  font-size: 32px;
   color: #131212;
-  margin-bottom: 30px;
-  /* O paddingRight original '20px 20px' era inválido. Foi removido.
-     Se for necessário um padding-right específico, defina-o aqui com um único valor. */
+  margin-bottom: 25px;
+  line-height: 1.3;
+  font-weight: 700;
+  width: 100%;
 
   @media (max-width: 768px) {
-    font-size: 28px; /* Ajusta para tablets */
-    padding-right: 0; /* Garante que não haja padding extra em telas menores */
+    font-size: 28px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: 480px) {
-    font-size: 24px; /* Ajusta para celulares */
-    text-align: center; /* Centraliza o texto em telas muito pequenas para melhor legibilidade */
+    font-size: 24px;
   }
 `;
 
-// Styled-component for the paragraph
-const StyledP = styled.p`
-  font-size: 18px;
-  line-height: 1.5;
-  color: #007;
-  margin-bottom: 20px;
+// Styled-component para o parágrafo
+const Paragraph = styled.p`
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  width: 100%;
 
   @media (max-width: 480px) {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: 25px;
   }
 `;
 
-// Styled-component for the CTA button
-const StyledCtaButton = styled.button`
-  background-color: #017410;
+// Styled-component para o botão do WhatsApp - AGORA MAIS COMPACTO
+const WhatsAppButton = styled.a`
+  background-color: #25d366;
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 18px;
-  border-radius: 5px;
-  display: flex;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+
+  /* Define um tamanho máximo para o botão */
+  max-width: 300px;
+  justify-content: center;
+  width: auto;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    background-color: #20bd5a;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 280px;
+    padding: 13px 26px;
+  }
 
   @media (max-width: 480px) {
-    font-size: 16px;
-    padding: 10px 15px;
-    justify-content: center; /* Centraliza o conteúdo do botão */
-    width: 100%; /* Botão de largura total no celular */
+    max-width: 100%;
+    width: 100%;
+    padding: 12px 24px;
+    justify-content: center;
   }
 `;
 
-// Styled-component for the video container
-const StyledVideoContainer = styled.div`
-  width: 45%;
-  text-align: center;
+// Styled-component para o contêiner do vídeo
+const VideoContainer = styled.div`
+  flex: 1;
   position: relative;
-
-  @media (max-width: 768px) {
-    width: 100%; /* Largura total em telas menores */
-    margin-top: 30px; /* Adiciona espaço entre texto e vídeo */
-  }
-`;
-
-// Styled-component for the video element itself
-const StyledVideo = styled.video`
-  width: 100%; /* Corrigido de 200% para 100% para evitar overflow */
-  max-width: 100%;
-  height: auto;
-  max-height: 420px;
+  min-width: 0;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  height: 580px;
+  max-width: 380px;
 
   @media (max-width: 768px) {
-    max-height: 300px; /* Ajusta a altura máxima para telas menores */
+    height: 350px;
+    max-width: 100%;
+    width: 100%;
   }
 
   @media (max-width: 480px) {
-    max-height: 200px; /* Ajusta ainda mais a altura máxima para celular */
+    height: 250px;
   }
 `;
 
-// Styled-component for the play button overlay
-const StyledPlayButton = styled.div`
+// Styled-component para o vídeo
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+// Styled-component para o botão de play/pause
+const PlayButton = styled.div<{ $isPlaying: boolean }>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: ${(props) =>
+    props.$isPlaying ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.7)'};
   color: white;
   border: none;
-  padding: 10px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   cursor: pointer;
-  display: flex;
+  display: ${(props) => (props.$isPlaying ? 'none' : 'flex')};
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
+// Opcional: Adicionar indicador de playing
+const PlayingIndicator = styled.div<{ $isPlaying: boolean }>`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: ${(props) => (props.$isPlaying ? 'flex' : 'none')};
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
 `;
 
 export default function Presentation() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const playButtonRef = useRef<HTMLDivElement | null>(null); // Ref para o div do botão
 
   const handlePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-
-        if (playButtonRef.current) {
-          // Verifica se playButtonRef.current existe
-          playButtonRef.current.style.display = 'flex';
-        }
       } else {
         videoRef.current.play();
         videoRef.current.muted = false;
-        if (playButtonRef.current) {
-          // Verifica se playButtonRef.current existe
-          playButtonRef.current.style.display = 'none';
-        }
       }
       setIsPlaying(!isPlaying);
     }
+  };
+
+  const handleVideoClick = () => {
+    handlePlayPause();
   };
 
   return (
@@ -188,38 +247,43 @@ export default function Presentation() {
         backgroundPosition: 'center',
       }}
     >
-      {/* Box branco com texto e vídeo */}
-      <StyledBox className="box">
-        {/* Texto à esquerda */}
-        <StyledTextContent id="inicio">
-          <StyledH1>
-            Engenharia Diagnóstica com Precisão e Credibilidade
-          </StyledH1>
-          <StyledP>
-            Inspeção Predial,Fiscalização de Obras e Laudos Técnicos realizados
-            por engenheiros especializados.
-          </StyledP>
-          <a
+      <MainCard>
+        {/* Conteúdo de texto à esquerda */}
+        <TextContent>
+          <Title>Engenharia Diagnóstica com Precisão e Credibilidade</Title>
+          <Paragraph>
+            Inspeção Predial, Fiscalização de Obras e Laudos Técnicos realizados
+            por engenheiros especializados. Garantimos qualidade e segurança em
+            cada projeto.
+          </Paragraph>
+          <WhatsAppButton
             href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
-            className="cta"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <StyledCtaButton type="button">
-              Agende um horário conosco{' '}
-              <FaWhatsapp style={{ fontSize: '22px' }} />
-            </StyledCtaButton>
-          </a>
-        </StyledTextContent>
+            Falar no WhatsApp
+            <FaWhatsapp style={{ fontSize: '18px' }} />
+          </WhatsAppButton>
+        </TextContent>
 
         {/* Vídeo à direita */}
-        <StyledVideoContainer className="video-container">
-          <StyledVideo ref={videoRef} src={moovideos} />
-          <StyledPlayButton ref={playButtonRef} onClick={handlePlayPause}>
-            {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
-          </StyledPlayButton>
-        </StyledVideoContainer>
-      </StyledBox>
+        <VideoContainer>
+          <Video
+            ref={videoRef}
+            src={moovideos}
+            onClick={handleVideoClick}
+            poster="https://via.placeholder.com/600x338/0077cc/ffffff?text=Clique+para+assistir"
+          />
 
-      {/* Estatísticas mais abaixo */}
+          <PlayingIndicator $isPlaying={isPlaying}>
+            <FaPlay size={10} /> Reproduzindo
+          </PlayingIndicator>
+
+          <PlayButton $isPlaying={isPlaying} onClick={handlePlayPause}>
+            {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
+          </PlayButton>
+        </VideoContainer>
+      </MainCard>
     </Container>
   );
 }
