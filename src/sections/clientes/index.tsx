@@ -10,7 +10,7 @@ const testimonialsData = [
     videoUrl: segplan,
     // Substitua pelo link embed do YouTube/Vimeo
     description:
-      'A Segplan Laudos entrega segurança, confiança e agilidade na execução de laudos técnicos. Trabalhamos com precisão, responsabilidade e foco total na regularização do seu negócio.',
+      'A Segplan  entrega segurança, confiança e agilidade na execução de laudos técnicos. Trabalhamos com precisão, responsabilidade e foco total na regularização do seu negócio.',
     author: 'Eng. Ricardo M. - Construtora Alpha',
   },
   {
@@ -24,7 +24,7 @@ const testimonialsData = [
     type: 'text',
     photoUrl: '/images/client-photo-02.jpg',
     description:
-      '"Encontrei a Segplan Laudos por indicação e foi uma das melhores escolhas que fiz para meu negócio. Eles resolveram toda parte técnica e burocrática de forma ágil, sem enrolação e com preço justo. Além disso, me orientaram sobre como manter as normas em dia e evitar problemas futuros.',
+      '"Encontrei a Segplan Engenharia  por indicação e foi uma das melhores escolhas que fiz para meu negócio. Eles resolveram toda parte técnica e burocrática de forma ágil, sem enrolação e com preço justo. Além disso, me orientaram sobre como manter as normas em dia e evitar problemas futuros.',
     author: 'Sr. Antônio C. - Síndico Condomínio Jardins',
   },
 ];
