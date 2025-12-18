@@ -267,22 +267,6 @@ export default function Presentation() {
         </TextContent>
 
         {/* Vídeo à direita */}
-        <VideoContainer>
-          <Video
-            ref={videoRef}
-            src={moovideos}
-            onClick={handleVideoClick}
-            poster="https://via.placeholder.com/600x338/0077cc/ffffff?text=Clique+para+assistir"
-          />
-
-          <PlayingIndicator $isPlaying={isPlaying}>
-            <FaPlay size={10} /> Reproduzindo
-          </PlayingIndicator>
-
-          <PlayButton $isPlaying={isPlaying} onClick={handlePlayPause}>
-            {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
-          </PlayButton>
-        </VideoContainer>
       </MainCard>
     </Container>
   );

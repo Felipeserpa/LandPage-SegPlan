@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Portfolio from './sections/clientes';
+//import Portfolio from './sections/clientes';
 import Hero from './sections/Hero';
 import Skills from './sections/Serviço';
 import GlobalStyles from './assets/styles/GlobalStyles';
@@ -45,7 +45,7 @@ function App() {
       <Hero />
       <Skills />
       <About />
-      <Portfolio />
+
       <Contact />
       {/* <Analytics /> */}
       <Footer />

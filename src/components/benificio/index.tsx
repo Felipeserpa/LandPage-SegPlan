@@ -109,14 +109,7 @@ export default function PortfolioSection() {
             </GalleryItem>
           ))}
         </GalleryGrid>
-        <iframe
-          className="video"
-          id="video"
-          src={segplan11}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title={`Vídeo Institucional da SEGPLAN`}
-        ></iframe>
+
         <div className="cta-contact-wrapper">
           <a
             href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
