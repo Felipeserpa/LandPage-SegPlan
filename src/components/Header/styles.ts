@@ -1,162 +1,164 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  /* LOGO FIXA NO CANTO ESQUERDO */
-  #logo {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 50;
-  }
-
-  #logo img {
-    width: 220px;
-    padding: 15px 0;
-    height: auto;
-    opacity: 0.95;
-    transition: 0.3s;
-
-    @media (max-width: 930px) {
-      width: 160px; /* Reduz para caber melhor no mobile */
-      padding: 10px 0;
-    }
-  }
-
   /* HEADER FIXO */
   .header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     padding: 2.5rem 0;
     display: flex;
     justify-content: center;
     background: #f8f9fa;
-    z-index: 40;
+    z-index: 100;
     transition: 0.3s ease-in-out;
 
     &.active {
-      padding: 1.2rem 0;
-      background: rgba(248, 249, 250, 0.9);
+      padding: 1rem 0;
+      background: rgba(248, 249, 250, 0.95);
       backdrop-filter: blur(10px);
-
-      @media (max-width: 930px) {
-        padding: 0.8rem 0;
-      }
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
   }
 
   nav {
     max-width: 1280px;
     width: 100%;
+    height: 60px; /* Altura fixa para alinhar verticalmente */
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between; /* WhatsApp na esquerda, Menu/Hamburger na direita */
     padding: 0 2rem;
+    position: relative; /* FUNDAMENTAL para a logo centralizar por aqui */
 
     @media (max-width: 930px) {
       padding: 0 1.5rem;
     }
   }
 
-  /* MENU DESKTOP */
+  /* LOGO NO CENTRO EXATO */
+  #logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 1rem;
+    margin: 10px;
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Move 50% para trás para centralizar o eixo */
+    z-index: 110;
+    pointer-events: auto;
+  }
+
+  #logo img {
+    width: 220px;
+    height: auto;
+    display: block;
+    transition: 0.3s;
+
+    @media (max-width: 930px) {
+      width: 150px;
+    }
+
+    @media (max-width: 450px) {
+      width: 120px;
+    }
+  }
+
+  /* BOTÃO WHATSAPP (CANTO ESQUERDO) */
+  .cta-container {
+    z-index: 120;
+    display: flex;
+    align-items: center;
+
+    button {
+      background-color: #017410;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #015c0d;
+      }
+
+      @media (max-width: 700px) {
+        padding: 8px 12px;
+        font-size: 0; /* Esconde o texto no mobile para não bater na logo */
+        gap: 0;
+
+        svg {
+          margin: 0;
+          font-size: 24px !important;
+        }
+      }
+    }
+  }
+
+  /* MENU E HAMBURGER (CANTO DIREITO) */
   .nav-menu {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 70%;
+    z-index: 150;
 
     @media (max-width: 930px) {
       position: fixed;
       right: -100%;
       top: 0;
       height: 100vh;
-      width: 60%;
-      padding: 120px 0 40px;
-      background: ${(props) => props.theme.grey};
+      width: 70%;
+      background: #f8f9fa;
       flex-direction: column;
+      justify-content: center;
       gap: 30px;
       transition: 0.4s ease;
-      z-index: 90;
-      backdrop-filter: blur(8px);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    &.active {
+      right: 0;
     }
   }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    font-size: 1.7rem;
-    font-weight: 600;
-
-    @media (max-width: 930px) {
-      flex-direction: column;
-      gap: 25px;
-      font-size: 2.6rem;
-    }
-  }
-
-  nav ul a {
-    color: ${(props) => props.theme.secondaryColor};
-    padding: 1rem 1.5rem;
-    transition: 0.3s;
-
-    &:hover {
-      color: ${(props) => props.theme.secondaryColorHover};
-    }
-
-    @media (max-width: 930px) {
-      color: #0f0e0eff;
-    }
-  }
-
-  /* HAMBURGER */
   .hamburger {
     display: none;
+    cursor: pointer;
+    z-index: 200;
 
     @media (max-width: 930px) {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 6px;
-      position: fixed;
-      top: 22px;
-      right: 25px;
-      width: 45px; /* Aumentado para o fundo */
-      height: 45px; /* Aumentado para o fundo */
-      cursor: pointer;
-      z-index: 200;
-
-      /* ⭐️ ESTILOS DO BACKGROUND DO HAMBURGER ⭐️ */
-      /* COR DE FUNDO (EX: AZUL) - Mude para a cor que desejar! */
-      border-radius: 8px; /* Cantos arredondados */
-      padding: 5px; /* Espaço interno para as barras */
     }
   }
 
   .bar {
-    width: 100%;
+    width: 30px;
     height: 4px;
     border-radius: 4px;
-    /* Use a cor do tema, ou #fff se o background do hamburger for escuro para melhor contraste */
-    background-color: ${(props) => props.theme.secondaryColor};
-    transition: 0.3s ease-in-out;
+    background-color: ${(props) => props.theme.secondaryColor || '#333'};
+    transition: 0.3s;
   }
 
-  @media (max-width: 930px) {
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(10px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-10px) rotate(-45deg);
-    }
-
-    .nav-menu.active {
-      right: 0;
-    }
+  /* ANIMAÇÃO DO HAMBURGER */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
   }
 `;
 
