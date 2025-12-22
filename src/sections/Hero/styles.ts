@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   .presentation {
     min-height: 100vh;
-    background-image: url(/cuidador.jpg);
+    background-image: url('/assets/images/marcelo.jpeg');
     background-size: cover;
     background-position: top center;
     position: relative;

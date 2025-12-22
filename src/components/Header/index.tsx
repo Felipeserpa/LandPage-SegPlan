@@ -37,7 +37,7 @@ export default function Header() {
               rel="noreferrer"
             >
               <button type="button" className="btn-whatsapp">
-                <span>Agende um horário</span>
+                <span>Fale pelo Whatsapp</span>
                 <FaWhatsapp />
               </button>
             </a>
