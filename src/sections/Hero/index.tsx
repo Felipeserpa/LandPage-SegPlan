@@ -9,21 +9,25 @@ import backgroundImage from '../../assets/images/segpred.jpg';
 const MainCard = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza o conteúdo agora que não tem vídeo */
+  justify-content: center;
   width: 100%;
-  max-width: 800px; /* Reduzi um pouco para ficar elegante sem o vídeo */
-  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 800px;
+
+  /* --- MUDANÇAS PARA TRANSPARÊNCIA --- */
+  background: none;
+  border: none;
+  box-shadow: none;
+
   border-radius: 15px;
-  padding: 60px; /* Aumentei o padding para dar mais destaque */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 60px;
+  //box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3); /* Sombra um pouco mais forte para destacar o vidro */
   animation: fadeInUp 1s ease-out;
-  text-align: center; /* Texto centralizado combina mais com card único */
+  text-align: center;
 
   @media (max-width: 768px) {
     padding: 40px 20px;
   }
 `;
-
 const TextContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +37,8 @@ const TextContent = styled.div`
 
 const Title = styled.h1`
   font-size: 36px;
-  color: #131212;
+  color: #ffffff; /* Mudado para branco */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto para ler melhor */
   margin-bottom: 25px;
   line-height: 1.2;
   font-weight: 800;
@@ -42,13 +47,13 @@ const Title = styled.h1`
     font-size: 26px;
   }
 `;
-
 const Paragraph = styled.p`
   font-size: 18px;
   line-height: 1.6;
-  color: #333;
+  color: #f1f1f1; /* Branco levemente acinzentado */
   margin-bottom: 35px;
-  max-width: 600px; /* Limita a largura para melhor leitura */
+  max-width: 600px;
+  font-weight: 500;
 `;
 
 const WhatsAppButton = styled.a`
@@ -79,17 +84,16 @@ export default function Presentation() {
       style={{
         position: 'relative',
         width: '100%',
-        minHeight: '100vh',
+        minHeight: '160vh', // Seção um pouco mais baixa
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem 5%',
-        /* 2. APLICAÇÃO DA IMAGEM COM OVERLAY ESCURO */
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
+        padding: '4rem 5%',
+        backgroundColor: '#e9e8e8', // Cor de fundo caso a imagem seja menor
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
+        backgroundSize: '100%', // Diminui o tamanho da imagem pela metade
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed', // Opcional: dá efeito de profundidade ao rolar
       }}
     >
       <MainCard>
