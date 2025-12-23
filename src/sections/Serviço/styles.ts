@@ -1,120 +1,149 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   #services {
-    background: #f8f8f8;
-    padding: 10px 0;
+    background-color: #f8f9fa;
+    padding: 20px 0 80px 0;
+    width: 100%;
   }
 
   .container {
-    width: min(1200px, 92%);
-    margin: auto;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .section-title {
     text-align: center;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    margin-bottom: 10px;
     color: #0b1d10;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
   }
 
-  /* 📌 4 por linha desktop */
   #skills-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
   }
 
-  /* CARD */
   .skill-card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    height: 430px; /* 🔥 padroniza todos no mesmo tamanho */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* mantém botão alinhado embaixo */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    /* Desktop: 4 colunas */
+    width: calc(25% - 20px);
+    min-width: 270px;
   }
 
   .skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    border-color: #25d366;
   }
 
-  /* 🔥 imagem 100% sem cortar */
+  /* 📌 IMAGEM: Mantendo a altura grande em todas as telas */
   .icon-wrapper {
     width: 100%;
-    height: 200px;
-    background: #fafafa;
+    height: 380px; /* Altura principal que você gostou */
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+
+  .icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem sobrar fundo */
+    display: block;
+  }
+
+  .card-content {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0b1d10;
+    margin-bottom: 10px;
+    min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .icon-wrapper img {
-    width: 150%;
-    height: 100%;
-    object-fit: contain; /* mostra a imagem completa */
-    padding-top: 1%;
-  }
-
-  /* 📌 Conteúdo igual para todos */
-  .card-content {
-    padding: 18px 20px;
-    flex-grow: 1;
-  }
-
-  .card-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #0b1d10;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
   .card-content p {
-    font-size: 0.95rem;
-    color: #444;
-    height: 75px; /* 🔥 controla altura do texto */
-    overflow: hidden;
-    text-align: center;
-  }
-
-  /* botão AGORA TODOS IGUAIS */
-  .card-button {
-    background: #25d366; /* Verde WhatsApp */
-    color: #fff;
     font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .card-button {
+    background-color: #25d366;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 8px 18px; /* 🔥 fino e menor */
-    border-radius: 6px; /* elegante */
-    margin: 15px auto 50px auto; /* 👈 Centralizado e igual em todos */
-    display: block;
-    width: fit-content; /* tamanho exato do botão */
-    letter-spacing: 0.4px;
-    transition: 0.25s ease-in-out;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 25px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
   }
 
-  .card-button:hover {
-    background: #1ebe5d; /* Tom mais forte no hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  }
+  /* 📱 RESPONSIVIDADE (Ajustando apenas a largura dos cards) */
 
-  /* 📌 Responsivo */
-  @media (max-width: 1024px) {
-    #skills-container {
-      grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1150px) {
+    .skill-card {
+      width: calc(33.33% - 20px);
     }
   }
 
-  @media (max-width: 700px) {
-    #skills-container {
-      grid-template-columns: 1fr;
+  @media (max-width: 850px) {
+    .skill-card {
+      width: calc(50% - 20px);
+    }
+    .icon-wrapper {
+      height: 380px; /* Mantém igual ao desktop no tablet */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skill-card {
+      width: 100%; /* Card ocupa a largura toda do celular */
+      min-width: unset;
+    }
+
+    .icon-wrapper {
+      /* 📌 No mobile, mantemos os 380px conforme sua preferência */
+      height: 380px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
     }
   }
 `;
-
-export default Container;

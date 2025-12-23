@@ -2,7 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { Toaster } from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
 //import About from './sections/About';
-import Contact from './sections/Contact';
+//import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 //import Portfolio from './sections/clientes';
@@ -45,8 +45,6 @@ function App() {
       <Hero />
       <Skills />
       <About />
-
-      <Contact />
       {/* <Analytics /> */}
       <Footer />
     </ThemeProvider>
