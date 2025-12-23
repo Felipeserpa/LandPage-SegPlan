@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useLayoutEffect, useState, useEffect } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp, FaReact, FaPhoneAlt } from 'react-icons/fa';
 import Container from './styles';
 import chat from '../../assets/images/segplan2.png';
 
@@ -59,6 +59,7 @@ export default function Header() {
                 rel="noreferrer"
               >
                 <button type="button" className="btn-whatsapp">
+                  <FaPhoneAlt />
                   <span>Ligue agora (81) 98928-2737</span>
                 </button>
               </a>

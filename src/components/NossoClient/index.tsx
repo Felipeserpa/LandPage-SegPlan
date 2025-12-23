@@ -41,9 +41,7 @@ export default function ClientLogosSection() {
   return (
     <Container id="clients">
       <div className="container">
-        <h2 className="section-title">
-          Nossos Clientes Confiam em Nossa Precisão
-        </h2>
+        <h2 className="section-title">Nossos Clientes</h2>
 
         <p className="section-subtitle">
           Empresas e condomínios que garantiram segurança e conformidade com a
@@ -74,7 +72,7 @@ const Container = styled.section`
   border-top: 1px solid #eee;
 
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
   }
 

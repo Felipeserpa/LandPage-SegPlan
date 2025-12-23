@@ -93,7 +93,7 @@ export default function PortfolioSection() {
   return (
     <Container id="Galeria">
       <div className="container">
-        <h2 className="section-title">Galeria de Vistorias e Laudos</h2>
+        <h2 className="section-title">Galeria de Fotos</h2>
         <p className="section-subtitle">
           A precisão e a qualidade do nosso trabalho em imagens. Veja alguns de
           nossos projetos concluídos.
