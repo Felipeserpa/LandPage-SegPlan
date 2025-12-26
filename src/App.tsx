@@ -32,7 +32,7 @@ function App() {
         {/* TAGS OPEN GRAPH (Para o compartilhamento em redes sociais) */}
         <meta
           property="og:title"
-          content="SegPlan | Laudos, Projetos e Avaliações de Engenharia"
+          content="SegPlan , Projetos e Avaliações de Engenharia"
         />
         <meta property="og:url" content="https://www.segplan.com.br/" />
         {/* Adicione a tag og:image com o URL de uma boa imagem */}
