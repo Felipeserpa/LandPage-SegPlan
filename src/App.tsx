@@ -1,51 +1,59 @@
 import { ThemeProvider } from 'styled-components';
 import { Toaster } from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
-//import About from './sections/About';
-//import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
-//import Portfolio from './sections/clientes';
 import Hero from './sections/Hero';
 import Skills from './sections/Serviço';
 import GlobalStyles from './assets/styles/GlobalStyles';
 import theme from './assets/styles/theme';
 import About from './sections/About';
-//import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      {/* 🟢 COLOQUE O HELMET AQUI, NO TOPO DO RETURN */}
       <Helmet>
-        {/* TÍTULO DA PÁGINA (Meta Title) */}
+        {/* TÍTULO: Otimizado para buscas locais e serviços principais */}
         <title>
-          Laudo de Avaliação de Imóveis | Projetos e Laudos Técnicos | SegPlan
+          SegPlan Engenharia | Avaliação de Imóveis e Laudos Técnicos
         </title>
 
-        {/* META DESCRIPTION (Texto que aparece no Google) */}
+        {/* DESCRIPTION: Deve conter as palavras-chave principais e um 'Call to Action' */}
         <meta
           name="description"
-          content="Especialistas em Laudos de Avaliação e Projetos de Engenharia. A SegPlan oferece certificação e segurança para o seu patrimônio. Solicite um orçamento sem compromisso."
+          content="Especialistas em Laudo de Avaliação de Imóveis, Perícias de Engenharia e Inspeção Predial. Garantia técnica e segurança jurídica para seu patrimônio com a SegPlan."
         />
 
-        {/* TAGS OPEN GRAPH (Para o compartilhamento em redes sociais) */}
+        {/* KEYWORDS: Embora o Google dê menos peso, ainda ajuda em outros buscadores */}
+        <meta
+          name="keywords"
+          content="engenharia diagnóstica, laudo de avaliação de imóveis, perícia de engenharia, inspeção predial, SegPlan Engenharia, avaliação patrimonial, engenheiro civil perito"
+        />
+
+        {/* OPEN GRAPH: Melhora o clique quando o link é compartilhado no WhatsApp/Instagram */}
         <meta
           property="og:title"
-          content="SegPlan , Projetos e Avaliações de Engenharia"
+          content="SegPlan Engenharia - Laudos e Avaliações Técnicas"
         />
+        <meta
+          property="og:description"
+          content="Segurança e precisão em engenharia diagnóstica e avaliações imobiliárias."
+        />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.segplan.com.br/" />
-        {/* Adicione a tag og:image com o URL de uma boa imagem */}
-      </Helmet>
-      {/* ------------------------------------------- */}
+        {/* Recomendo adicionar uma imagem de preview: */}
+        {/* <meta property="og:image" content="www.segplan.com.br" /> */}
 
-      <Toaster position="bottom-right" font-size="1 rem" />
+        {/* CANONICAL: Evita conteúdo duplicado */}
+        <link rel="canonical" href="https://www.segplan.com.br/" />
+      </Helmet>
+
+      <Toaster position="bottom-right" />
       <GlobalStyles />
       <Header />
       <Hero />
       <Skills />
       <About />
-      {/* <Analytics /> */}
       <Footer />
     </ThemeProvider>
   );
