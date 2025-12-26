@@ -15,7 +15,7 @@ const Container = styled.div`
     transition: 0.3s ease-in-out;
 
     &.active {
-      padding: 1rem 0;
+      padding: 3rem 0;
       background: rgba(248, 249, 250, 0.95);
       backdrop-filter: blur(10px);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -53,17 +53,18 @@ const Container = styled.div`
   }
 
   #logo img {
-    width: 220px;
+    width: 300px;
     height: auto;
     display: block;
     transition: 0.3s;
+    padding-top: 20px;
 
     @media (max-width: 930px) {
       width: 150px;
     }
 
     @media (max-width: 450px) {
-      width: 120px;
+      width: 200px;
     }
   }
 
