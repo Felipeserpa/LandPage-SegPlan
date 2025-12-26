@@ -12,7 +12,9 @@ import segplan8 from './../../assets/images/galeria/segplan07.jpg';
 import segplan9 from './../../assets/images/galeria/segplan08.jpg';
 import segplan10 from './../../assets/images/galeria/segplan09.jpg';
 
-import segplan11 from '../../assets/videos/Sem título.mp4';
+import segplan11 from '../../assets/images/galeria/segplan10.jpg';
+
+import segplan12 from '../../assets/images/galeria/segplan11.jpg';
 
 // Dados de Exemplo para a Galeria de Fotos
 // Aumentado para 10 itens para criar a grade 5x2
@@ -87,6 +89,20 @@ const portfolioItems = [
     src: segplan9,
     category: 'escritório',
   },
+  {
+    id: 11,
+    type: 'image',
+    src: segplan11,
+    alt: 'Equipe Segplan em Ação',
+    category: 'Equipe',
+  },
+  {
+    id: 12,
+    type: 'image',
+    src: segplan12,
+    alt: 'Reunião de Planejamento de Projeto',
+    category: 'Reunião',
+  },
 ];
 
 export default function PortfolioSection() {
@@ -137,16 +153,6 @@ const Container = styled.div`
   .container {
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .video {
-    width: 45%;
-    height: 480px;
-    margin-top: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    position: relative;
   }
 
   .section-title {
@@ -202,7 +208,7 @@ const Container = styled.div`
 const GalleryGrid = styled.div`
   display: grid;
   /* ALTERADO: Forçando 5 colunas para layout 5x2 em desktop. */
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 
   @media (max-width: 1280px) {
