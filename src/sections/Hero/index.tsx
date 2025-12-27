@@ -72,11 +72,16 @@ const ContactForm = styled.form`
   textarea {
     width: 100%;
     padding: 14px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(155, 153, 153, 0.9);
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     color: #333;
+
+    &::placeholder {
+      color: #ffffff;
+      opacity: 1;
+    }
 
     &:focus {
       outline: 2px solid #25d366;
@@ -145,10 +150,10 @@ export default function Presentation() {
             <h3 style={{ color: '#fff', marginBottom: '20px' }}>
               Entre em contato e solicite um orçamento
             </h3>
-            <input type="text" placeholder="Seu Nome Completo" required />
+            <input type="text" placeholder="Seu Nome Completo " required />
             <input type="email" placeholder="Seu E-mail" required />
             <input type="tel" placeholder="WhatsApp (DDD + Número)" required />
-            <textarea placeholder="Como podemos ajudar?" required />
+            <textarea placeholder="Serviço que está buscando?" required />
             <WhatsAppSubmitLink
               href="https://wa.me/5581989282737?text=Olá! Vim pelo site e gostaria de um orçamento."
               target="_blank"
