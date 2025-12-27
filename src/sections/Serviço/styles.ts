@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   #services {
     background-color: #f8f9fa;
-    padding: 20px 0 80px 0;
-    width: 100%;
+    padding: 60px 0 100px;
   }
 
   .container {
@@ -15,135 +14,117 @@ export const Container = styled.div`
 
   .section-title {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 800;
     color: #0b1d10;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     text-transform: uppercase;
     letter-spacing: -1px;
   }
 
   #skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
 
+  /* CARD */
   .skill-card {
-    background: #ffffff;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 14px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-    /* Desktop: 4 colunas */
-    width: calc(25% - 20px);
-    min-width: 270px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
   }
 
   .skill-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    border-color: #25d366;
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
   }
 
-  /* 📌 IMAGEM: Mantendo a altura grande em todas as telas */
-  .icon-wrapper {
+  /* IMAGEM */
+  .image-wrapper {
+    position: relative;
     width: 100%;
-    height: 380px; /* Altura principal que você gostou */
+    height: 320px;
     overflow: hidden;
-    background: #f0f0f0;
   }
 
-  .icon-wrapper img {
+  .image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a foto preencha o espaço sem sobrar fundo */
-    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
   }
 
-  .card-content {
-    padding: 20px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  .skill-card:hover img {
+    transform: scale(1.08);
   }
 
-  .card-content h3 {
+  /* OVERLAY */
+  .image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.1),
+      transparent
+    );
+  }
+
+  .image-title {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    z-index: 2;
+    color: #fff;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #0b1d10;
-    margin-bottom: 10px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 1.3;
+  }
+
+  /* TEXTO */
+  .card-content {
+    padding: 20px;
   }
 
   .card-content p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: #555;
-    line-height: 1.5;
-    margin-bottom: 15px;
   }
 
-  .card-button {
-    background-color: #25d366;
-    color: #fff !important;
-    text-decoration: none !important;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: fit-content;
-    align-self: center;
-    margin-top: auto;
-    margin-bottom: 25px;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
-  }
-
-  /* 📱 RESPONSIVIDADE (Ajustando apenas a largura dos cards) */
-
-  @media (max-width: 1150px) {
-    .skill-card {
-      width: calc(33.33% - 20px);
+  /* RESPONSIVO */
+  @media (max-width: 1100px) {
+    #skills-container {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   @media (max-width: 850px) {
-    .skill-card {
-      width: calc(50% - 20px);
+    #skills-container {
+      grid-template-columns: repeat(2, 1fr);
     }
-    .icon-wrapper {
-      height: 380px; /* Mantém igual ao desktop no tablet */
+
+    .image-wrapper {
+      height: 300px;
     }
   }
 
   @media (max-width: 600px) {
-    .skill-card {
-      width: 100%; /* Card ocupa a largura toda do celular */
-      min-width: unset;
-    }
-
-    .icon-wrapper {
-      /* 📌 No mobile, mantemos os 380px conforme sua preferência */
-      height: 380px;
+    #skills-container {
+      grid-template-columns: 1fr;
     }
 
     .section-title {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
+    }
+
+    .image-wrapper {
+      height: 260px;
     }
   }
 `;

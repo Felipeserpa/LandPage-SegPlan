@@ -13,39 +13,30 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
-        {/* TÍTULO: Otimizado para buscas locais e serviços principais */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <title>
           SegPlan Engenharia | Avaliação de Imóveis e Laudos Técnicos
         </title>
 
-        {/* DESCRIPTION: Deve conter as palavras-chave principais e um 'Call to Action' */}
         <meta
           name="description"
           content="Especialistas em Laudo de Avaliação de Imóveis, Perícias de Engenharia e Inspeção Predial. Garantia técnica e segurança jurídica para seu patrimônio com a SegPlan."
         />
 
-        {/* KEYWORDS: Embora o Google dê menos peso, ainda ajuda em outros buscadores */}
         <meta
           name="keywords"
-          content="engenharia diagnóstica, laudo de avaliação de imóveis, perícia de engenharia, inspeção predial, SegPlan Engenharia, avaliação patrimonial, engenheiro civil perito"
+          content="engenharia diagnóstica, laudo de avaliação de imóveis, perícia de engenharia, inspeção predial, SegPlan Engenharia"
         />
 
-        {/* OPEN GRAPH: Melhora o clique quando o link é compartilhado no WhatsApp/Instagram */}
         <meta
           property="og:title"
-          content="SegPlan Engenharia - Laudos e Avaliações Técnicas"
+          content="SegPlan Engenharia - Laudos Técnicos"
         />
         <meta
           property="og:description"
-          content="Segurança e precisão em engenharia diagnóstica e avaliações imobiliárias."
+          content="Segurança e precisão em engenharia diagnóstica."
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.segplan.com.br/" />
-        {/* Recomendo adicionar uma imagem de preview: */}
-        {/* <meta property="og:image" content="www.segplan.com.br" /> */}
-
-        {/* CANONICAL: Evita conteúdo duplicado */}
-        <link rel="canonical" href="https://www.segplan.com.br/" />
       </Helmet>
       <Toaster position="bottom-right" />
       <GlobalStyles />

@@ -109,12 +109,12 @@ export default function PortfolioSection() {
   return (
     <Container id="Galeria">
       <div className="container">
+        <br />
+        <br />
         <h2 className="section-title">Galeria de Fotos</h2>
-        <p className="section-subtitle">
-          A precisão e a qualidade do nosso trabalho em imagens. Veja alguns de
-          nossos projetos concluídos.
-        </p>
 
+        <br />
+        <br />
         <GalleryGrid>
           {portfolioItems.map((item) => (
             <GalleryItem

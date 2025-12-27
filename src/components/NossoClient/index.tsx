@@ -44,11 +44,6 @@ export default function ClientLogosSection() {
       <div className="container">
         <h2 className="section-title">Nossos Clientes</h2>
 
-        <p className="section-subtitle">
-          Empresas e condomínios que garantiram segurança e conformidade com a
-          SEGPLAN.
-        </p>
-
         <LogoMarquee>
           <LogoTrack>
             {[...clientLogos, ...clientLogos].map((logo, index) => (
@@ -148,7 +143,7 @@ const LogoItem = styled.div`
 
   img {
     max-width: 100%;
-    max-height: 60px;
+    max-height: 90px;
     transition: 0.3s;
     filter: grayscale(0%);
   }

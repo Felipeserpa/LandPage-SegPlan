@@ -25,7 +25,7 @@ const Container = styled.div`
   nav {
     max-width: 1280px;
     width: 100%;
-    height: 60px; /* Altura fixa para alinhar verticalmente */
+    height: 30px; /* Altura fixa para alinhar verticalmente */
     display: flex;
     align-items: center;
     justify-content: space-between; /* WhatsApp na esquerda, Menu/Hamburger na direita */

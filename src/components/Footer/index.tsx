@@ -200,7 +200,7 @@ export default function Footer() {
             <h4>Conecte-se</h4>
             <div className="social-wrapper">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/segplan_pec/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
