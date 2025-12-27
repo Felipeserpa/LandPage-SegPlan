@@ -7,7 +7,7 @@ import Albuns from '../../components/NossoClient';
 
 import icone01 from '../../assets/images/avaliacao de imoves.jpg';
 import icone02 from '../../assets/images/Projetos de  combate a incendio.jpg';
-import icone04 from '../../assets/images/alvaras.jpg';
+import icone04 from '../../assets/images/alvaras.png';
 import icone05 from '../../assets/images/fiscalizacao de obras.jpg';
 import icone06 from '../../assets/images/segplan inspeçao pedrial.jpg';
 import icone07 from '../../assets/images/levatamento arquitetônico.jpg';
