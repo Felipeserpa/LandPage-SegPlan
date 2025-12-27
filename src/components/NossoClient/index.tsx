@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import Clientes from '../../sections/clientes';
 
 import logo01 from '../../assets/images/cliente/LOGO (1).png';
 import logo02 from '../../assets/images/cliente/LOGO (2).png';
@@ -58,6 +59,7 @@ export default function ClientLogosSection() {
           </LogoTrack>
         </LogoMarquee>
       </div>
+      <Clientes />
     </Container>
   );
 }

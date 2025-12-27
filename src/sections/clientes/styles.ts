@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 // O Styled-Components para o FAQSection
 const Container = styled.div`
-  padding: 80px 20px;
+  padding: 80px;
   background-color: #ffffff; /* Fundo branco limpo */
 
   .container {
-    max-width: 900px; /* Limita a largura para melhor leitura do texto */
+    max-width: 1200px; /* Limita a largura para melhor leitura do texto */
     margin: 0 auto;
   }
 

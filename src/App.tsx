@@ -47,7 +47,6 @@ function App() {
         {/* CANONICAL: Evita conteúdo duplicado */}
         <link rel="canonical" href="https://www.segplan.com.br/" />
       </Helmet>
-
       <Toaster position="bottom-right" />
       <GlobalStyles />
       <Header />

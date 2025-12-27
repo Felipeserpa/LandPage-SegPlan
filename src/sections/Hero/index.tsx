@@ -48,7 +48,7 @@ const Paragraph = styled.p`
 
 const FormColumn = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 600px; /* Aumente este valor (ex: 600px, 700px) para alargar o card */
   /* EFEITO VIDRO TRANSPARENTE */
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(1px);
