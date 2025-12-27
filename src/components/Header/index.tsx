@@ -35,9 +35,18 @@ export default function Header() {
               href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
               target="_blank"
               rel="noreferrer"
+              onClick={() => {
+                if (window.gtag) {
+                  window.gtag('event', 'conversion', {
+                    send_to: 'AW-17835851857/xDiyCJ_ildgbENGA5rhC',
+                    value: 1.0,
+                    currency: 'BRL',
+                  });
+                }
+              }}
             >
               <button type="button" className="btn-whatsapp">
-                <span>Fale pelo Whatsapp</span>
+                <span>Fale pelo WhatsApp</span>
                 <FaWhatsapp />
               </button>
             </a>

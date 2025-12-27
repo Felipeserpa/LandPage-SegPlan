@@ -4,6 +4,12 @@ import styled from 'styled-components';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import Container from './styles';
 
+declare global {
+  interface Window {
+    gtag?: (event: string, name: string, params: any) => void;
+  }
+}
+
 export default function ContactSection() {
   return (
     <Container id="contact">
@@ -81,8 +87,17 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="submit-button"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'conversion', {
+                      send_to: 'AW-17835851857/xDiyCJ_ildgbENGA5rhC',
+                      value: 1.0,
+                      currency: 'BRL',
+                    });
+                  }
+                }}
               >
-                Solicitar Orçamento Gratuito
+                Solicitar o Orçamento
               </a>
             </form>
           </div>

@@ -157,10 +157,19 @@ export default function Presentation() {
             <WhatsAppSubmitLink
               href="https://wa.me/5581989282737?text=Olá! Vim pelo site e gostaria de um orçamento."
               target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (window.gtag) {
+                  window.gtag('event', 'conversion', {
+                    send_to: 'AW-17835851857/xDiyCJ_ildgbENGA5rhC',
+                    value: 1.0,
+                    currency: 'BRL',
+                  });
+                }
+              }}
             >
               Fale Conosco agora
-              <FaWhatsapp size={24} />{' '}
-              {/* Aumentei o tamanho do ícone para 24 */}
+              <FaWhatsapp size={24} />
             </WhatsAppSubmitLink>
           </ContactForm>
         </FormColumn>
