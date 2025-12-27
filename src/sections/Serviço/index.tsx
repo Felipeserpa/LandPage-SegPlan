@@ -61,7 +61,7 @@ const services = [
   {
     id: 'arquitetonico',
     src: icone07,
-    title: 'Arquitetônico',
+    title: ' Levantamento Arquitetônico',
     description:
       'Antes de reformar ou regularizar, faça o levantamento arquitetônico.',
   },
