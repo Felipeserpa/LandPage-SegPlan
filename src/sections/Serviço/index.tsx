@@ -5,12 +5,13 @@ import { Container } from './styles';
 import Benefits from '../../components/benificio';
 import Albuns from '../../components/NossoClient';
 
-import icone01 from '../../assets/images/avaliaçao de imoveis.jpg';
-import icone02 from '../../assets/images/bombeiros.png';
-import icone04 from '../../assets/images/alvara.jpeg';
-import icone05 from '../../assets/images/fiscal Obras.jpeg';
-import icone06 from '../../assets/images/inspeçao pedrial.jpeg';
-import icone07 from '../../assets/images/arquitetonico.png';
+import icone01 from '../../assets/images/avaliacao de imoves.jpg';
+import icone02 from '../../assets/images/Projetos de  combate a incendio.jpg';
+import icone04 from '../../assets/images/alvaras.jpg';
+import icone05 from '../../assets/images/fiscalizacao de obras.jpg';
+import icone06 from '../../assets/images/segplan inspeçao pedrial.jpg';
+import icone07 from '../../assets/images/levatamento arquitetônico.jpg';
+import icone08 from '../../assets/images/laudos tecnicos.jpg';
 
 const WHATSAPP_LINK = 'https://wa.me/message/VOG6YD5POXPPG1';
 
@@ -43,6 +44,7 @@ const services = [
     description:
       'Documento essencial para funcionamento seguro e prevenção contra incêndios.',
   },
+
   {
     id: 'Avaliação',
     src: icone01,
@@ -51,7 +53,7 @@ const services = [
   },
   {
     id: 'laudos',
-    src: icone06,
+    src: icone08,
     title: 'Laudos Técnicos',
     description:
       'Emissão de documentos periciais com rigor técnico e validade jurídica.',
