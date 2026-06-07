@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useLayoutEffect, useState, useEffect } from 'react';
-import { FaWhatsapp, FaReact, FaPhoneAlt } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import Container from './styles';
 import chat from '../../assets/images/segplan2.png';
 
@@ -12,7 +12,9 @@ export default function Header() {
 
   const toggleMode = () => setMode(!active);
 
-  // Fecha o menu ao redimensionar a tela
+  // Fecha o menu ao redimensionar a tela ou clicar em um link
+  const closeMenu = () => setMode(false);
+
   useLayoutEffect(() => {
     document.body.style.overflow = active ? 'hidden' : 'auto';
   }, [active]);
@@ -27,51 +29,68 @@ export default function Header() {
 
   return (
     <Container>
+      {/* Overlay de fundo escuro para o mobile */}
+      <div
+        className={active ? 'overlay active' : 'overlay'}
+        onClick={closeMenu}
+      ></div>
+
       <header className={navbar ? 'header active' : 'header'}>
         <nav>
-          {/* BOTÃO WHATSAPP - CANTO ESQUERDO */}
-          <div className="cta-container">
+          {/* 1. LOGO ESQUERDA */}
+          <a href="/" className="logo">
+            <img src={chat} alt="SEGPLAN" />
+          </a>
+
+          {/* 2. MENU CENTRAL (Apenas os links de navegação textuais) */}
+          <ul className={active ? 'nav-menu active' : 'nav-menu'}>
+            <li>
+              <a href="#inicio" className="active" onClick={closeMenu}>
+                Início
+              </a>
+            </li>
+            <li>
+              <a href="#sobre" onClick={closeMenu}>
+                Sobre Nós
+              </a>
+            </li>
+            <li>
+              <a href="#servicos" onClick={closeMenu}>
+                Serviços
+              </a>
+            </li>
+            <li>
+              <a href="#portfolio" onClick={closeMenu}>
+                Portfólio
+              </a>
+            </li>
+            <li>
+              <a href="#contato" onClick={closeMenu}>
+                Contato
+              </a>
+            </li>
+          </ul>
+
+          {/* 3. AÇÕES DIREITA (Onde os botões devem morar para alinhar igual à foto) */}
+          <div className="actions">
+            {/* Botão Retangular Azul "Solicitar Orçamento" */}
             <a
-              href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
+              href="https://wa.me/5581999999999"
               target="_blank"
               rel="noreferrer"
-              onClick={() => {
-                if (window.gtag) {
-                  window.gtag('event', 'conversion', {
-                    send_to: 'AW-17835851857/xDiyCJ_ildgbENGA5rhC',
-                    value: 1.0,
-                    currency: 'BRL',
-                  });
-                }
-              }}
+              className="btn-orcamento"
             >
-              <button type="button" className="btn-whatsapp">
-                <span>Fale pelo WhatsApp</span>
-                <FaWhatsapp />
-              </button>
+              Solicitar Orçamento
             </a>
-          </div>
 
-          {/* LOGO - CENTRO EXATO */}
-          <div id="logo">
-            <a href="/">
-              <img src={chat} alt="Logo da Segplan" />
-            </a>
-          </div>
-
-          {/* MENU / HAMBURGER - CANTO DIREITO */}
-          <div className="menu-section">
-            <div className="cta-container">
-              <a
-                href="https://wa.me/5581989282737?text=Olá,%20tenho%20interesse%20no%20serviço!"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <button type="button" className="btn-whatsapp">
-                  <FaPhoneAlt />
-                  <span>Ligue agora (81) 98928-2737</span>
-                </button>
-              </a>
+            {/* Menu Hamburguer do Mobile */}
+            <div
+              className={active ? 'hamburger active' : 'hamburger'}
+              onClick={toggleMode}
+            >
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
             </div>
           </div>
         </nav>
