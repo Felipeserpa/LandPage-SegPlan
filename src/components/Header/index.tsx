@@ -46,12 +46,12 @@ export default function Header() {
           <ul className={active ? 'nav-menu active' : 'nav-menu'}>
             <li>
               <a href="#inicio" className="active" onClick={closeMenu}>
-                Início
+                Quem somos
               </a>
             </li>
             <li>
               <a href="#sobre" onClick={closeMenu}>
-                Sobre Nós
+                Equipe
               </a>
             </li>
             <li>
@@ -61,12 +61,12 @@ export default function Header() {
             </li>
             <li>
               <a href="#portfolio" onClick={closeMenu}>
-                Portfólio
+                Como Funciona
               </a>
             </li>
             <li>
               <a href="#contato" onClick={closeMenu}>
-                Contato
+                FAQ
               </a>
             </li>
           </ul>

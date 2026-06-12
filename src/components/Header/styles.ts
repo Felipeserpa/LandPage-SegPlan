@@ -4,11 +4,11 @@ const Container = styled.div`
   /* CONTAINER DO HEADER (Fica invisível, serve para posicionar a barra) */
   .header {
     position: fixed;
-    //top: 24px; /* Afasta o menu do topo exatamente igual à foto */
+    //nom run devtop: 24px; /* Afasta o menu do topo exatamente igual à foto */
     left: 0;
     width: 100%;
     z-index: 999;
-    padding: 0 2rem; /* Margem nas laterais da tela */
+    // padding: 0 2rem; /* Margem nas laterais da tela */
     transition: all 0.3s ease;
     background: transparent; /* Remove o fundo do container pai */
     border-bottom: none; /* Remove a linha cinza antiga */
@@ -23,15 +23,16 @@ const Container = styled.div`
 
   /* A CÁPSULA BRANCA (O menu em si) */
   nav {
-    max-width: 1200px; /* Largura ideal para alinhar com o design da foto */
-    height: 64px; /* Altura um pouco mais elegante para o formato pílula */
+    max-width: 2600px; /* Largura ideal para alinhar com o design da foto */
+    height: 79px; /* Altura um pouco mais elegante para o formato pílula */
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
     background: #ffffff; /* Fundo totalmente branco */
-    border-radius: 100px; /* Transforma o menu em uma pílula perfeita */
+    position: relative;
+
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); /* Sombra suave da foto */
     transition: all 0.3s ease;
   }
@@ -45,7 +46,7 @@ const Container = styled.div`
   }
 
   .logo img {
-    width: 130px;
+    width: 180px;
     height: auto;
     display: block;
   }
@@ -150,8 +151,8 @@ const Container = styled.div`
   }
 
   .bar {
-    width: 26px;
-    height: 3px;
+    width: 33px;
+    height: 5px;
     border-radius: 10px;
     background: #003f7d;
     transition: 0.3s;
