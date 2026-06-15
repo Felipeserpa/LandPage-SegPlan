@@ -1,100 +1,92 @@
-import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { Container } from './styles';
+import React, { useState } from 'react';
+import { FaHome, FaBriefcase, FaChartBar } from 'react-icons/fa';
+import QuizContainer from './styles';
 
-import Benefits from '../../components/benificio';
-import Albuns from '../../components/NossoClient';
+export default function DiagnosticoRapido() {
+  // Estado para monitorar qual card foi selecionado pelo usuário
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-import icone01 from '../../assets/images/avaliacao de imoves.jpg';
-import icone02 from '../../assets/images/Projetos de  combate a incendio.jpg';
-import icone04 from '../../assets/images/alvaras.png';
-import icone05 from '../../assets/images/fiscalizacao de obras.jpg';
-import icone06 from '../../assets/images/segplan inspeçao pedrial.jpg';
-import icone07 from '../../assets/images/levatamento arquitetônico.jpg';
-import icone08 from '../../assets/images/laudos tecnicos.jpg';
+  const handleSelect = (id: string) => {
+    setSelectedOption(id);
+    // Aqui você pode adicionar lógica para avançar de etapa automaticamente ou salvar a resposta
+    console.log(`Opção selecionada: ${id}`);
+  };
 
-const WHATSAPP_LINK = 'https://wa.me/message/VOG6YD5POXPPG1';
-
-const services = [
-  {
-    id: 'inspecao',
-    src: icone06,
-    title: 'Inspeção Predial',
-    description:
-      'Análise detalhada para garantir segurança, funcionalidade e valorização do imóvel.',
-  },
-  {
-    id: 'fiscalizacao',
-    src: icone05,
-    title: 'Fiscalização de Obras',
-    description:
-      'Monitoramento técnico para assegurar conformidade com normas e projeto.',
-  },
-  {
-    id: 'alvaras',
-    src: icone04,
-    title: 'Alvarás de Localização',
-    description:
-      'Regularização profissional com emissão de alvará municipal aprovada.',
-  },
-  {
-    id: 'avcb',
-    src: icone02,
-    title: 'AVCB dos Bombeiros',
-    description:
-      'Documento essencial para funcionamento seguro e prevenção contra incêndios.',
-  },
-
-  {
-    id: 'Avaliação',
-    src: icone01,
-    title: 'Avaliação de Imóveis',
-    description: 'Transparência e confiabilidade na avaliação do seu imóvel.',
-  },
-  {
-    id: 'laudos',
-    src: icone08,
-    title: 'Laudos Técnicos',
-    description:
-      'Emissão de documentos periciais com rigor técnico e validade jurídica.',
-  },
-  {
-    id: 'arquitetonico',
-    src: icone07,
-    title: ' Levantamento Arquitetônico',
-    description:
-      'Antes de reformar ou regularizar, faça o levantamento arquitetônico.',
-  },
-];
-
-export default function ServicesSection() {
   return (
-    <Container>
-      <section id="services">
-        <div className="container">
-          <h2 className="section-title">Nossos Serviços</h2>
+    <QuizContainer>
+      {/* BACKGROUND COM AS LINHAS TÉCNICAS */}
+      <div className="bg-blueprint" />
 
-          <div id="skills-container">
-            {services.map((service) => (
-              <div className="skill-card" key={service.id}>
-                <div className="icon-wrapper">
-                  <img src={service.src} alt={service.title} />
-                </div>
+      {/* CONTEÚDO CENTRALIZADO */}
+      <div className="quiz-content">
+        <div className="tag-diagnostico">Diagnóstico Rápido</div>
 
-                <div className="card-content">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              </div>
-            ))}
+        <h2>
+          Qual serviço a <span className="text-gradient">SEGPLAN</span> pode
+          oferecer pra você?
+        </h2>
+
+        <p className="subtitulo">
+          Responda 2 perguntas e saiba exatamente o que você precisa.
+        </p>
+
+        {/* CONTAINER DO FORMULÁRIO / INTERATIVIDADE */}
+        <div className="quiz-card-box">
+          {/* Indicador de passos (3 círculos, o primeiro ativo conforme a imagem) */}
+          <div className="steps-indicator">
+            <span className="dot active" />
+            <span className="dot" />
+            <span className="dot" />
           </div>
 
-          <div style={{ marginTop: '80px' }}>
-            <Albuns />
-            <Benefits />
+          <h3>Qual tipo de imóvel?</h3>
+          <p className="instrucao">
+            Selecione a opção que melhor descreve o seu caso
+          </p>
+
+          {/* GRID COM OS CARDS CLICÁVEIS */}
+          <div className="options-grid">
+            {/* Card Residencial */}
+            <div
+              className={`option-card ${
+                selectedOption === 'residencial' ? 'selected' : ''
+              }`}
+              onClick={() => handleSelect('residencial')}
+            >
+              <div className="icon-container">
+                <FaHome size={28} />
+              </div>
+              <span>Residencial</span>
+            </div>
+
+            {/* Card Comercial */}
+            <div
+              className={`option-card ${
+                selectedOption === 'comercial' ? 'selected' : ''
+              }`}
+              onClick={() => handleSelect('comercial')}
+            >
+              <div className="icon-container">
+                <FaBriefcase size={26} />
+              </div>
+              <span>Comercial</span>
+            </div>
+
+            {/* Card Condomínio */}
+            <div
+              className={`option-card ${
+                selectedOption === 'condominio' ? 'selected' : ''
+              }`}
+              onClick={() => handleSelect('condominio')}
+            >
+              <div className="icon-container">
+                <FaChartBar size={26} />
+              </div>
+              <span>Condomínio</span>
+            </div>
           </div>
         </div>
-      </section>
-    </Container>
+      </div>
+    </QuizContainer>
   );
 }

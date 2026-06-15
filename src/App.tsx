@@ -8,7 +8,7 @@ import Skills from './sections/Serviço';
 import GlobalStyles from './assets/styles/GlobalStyles';
 import theme from './assets/styles/theme';
 import About from './sections/About';
-
+import Cliente from './sections/clientes';
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -43,6 +43,7 @@ function App() {
       <Header />
       <Hero />
       <Skills />
+      <Cliente />
       <About />
       <Footer />
     </ThemeProvider>
