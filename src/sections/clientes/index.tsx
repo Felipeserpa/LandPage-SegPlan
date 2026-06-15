@@ -1,55 +1,101 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { FaShieldAlt, FaRegFileAlt, FaRegEye, FaUsers } from 'react-icons/fa';
+import QuemSomosContainer from './styles';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-import { Section, Wrapper, TextBox, SliderBox, ImageSlide } from './styles';
-
-import img1 from '../../assets/images/galeria/segplan08.jpg';
-import img2 from '../../assets/images/segpred.jpg';
-import img3 from '../../assets/images/galeria/segplan10.jpg';
-
-const images = [img1, img2, img3];
-
-export default function TestimonialSection() {
+export default function QuemSomos() {
   return (
-    <Section id="sobre">
-      <Wrapper>
-        <TextBox>
-          <h2>Quem somos</h2>
+    <QuemSomosContainer id="quem-somos">
+      <div className="conteudo-wrapper">
+        {/* LADO ESQUERDO: CARD INSTITUCIONAL AZUL */}
+        <div className="bloco-visual">
+          <div className="marca-centro">
+            <div className="icone-s">S</div>
+            <h4>SEGPLAN</h4>
+            <span>Engenharia Diagnóstica</span>
+          </div>
 
-          <p>
-            A SegPlan atua há mais de 10 anos no mercado, sendo especializada em
-            engenharia diagnóstica. Oferece serviços como laudos de inspeção
-            predial, fiscalização de obras, projetos de combate a incêndio,
-            avaliação de imóveis e alvarás de funcionamento.
-          </p>
+          {/* Emblema destacado e sobreposto */}
+          <div className="emblema-experiencia">
+            <span className="numero">15+</span>
+            <span className="texto">Anos de experiência</span>
+          </div>
+        </div>
 
-          <p>
-            Com sede em Recife, a empresa atende todo o estado de Pernambuco,
-            prestando serviços com qualidade técnica, segurança e
-            confiabilidade, sempre em conformidade com as normas vigentes.
-          </p>
-        </TextBox>
+        {/* LADO DIREITO: TEXTOS E DIFERENCIAIS */}
+        <div className="bloco-textos">
+          <h2>
+            Técnica, <br />
+            <span className="titulo-azul">confiança e compromisso</span> <br />
+            com seu patrimônio.
+          </h2>
 
-        <SliderBox>
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            slidesPerView={1}
-            loop
-            autoplay={{ delay: 3000 }}
-            pagination={{ clickable: true }}
-          >
-            {images.map((img, i) => (
-              <SwiperSlide key={i}>
-                <ImageSlide src={img} alt="" />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </SliderBox>
-      </Wrapper>
-    </Section>
+          <div className="paragrafos">
+            <p>
+              A SEGPLAN Consultoria Ltda. é uma empresa especializada em
+              engenharia diagnóstica, com sede em Recife/PE. Atuamos com laudos
+              técnicos, inspeção predial, avaliações de imóveis e fiscalização
+              de obras, sempre com responsabilidade técnica e cobertura via ART
+              (Anotação de Responsabilidade Técnica).
+            </p>
+            <p>
+              Nosso diretor técnico Marcelo Wanderley Carmo lidera uma equipe
+              comprometida com a qualidade, segurança e transparência nos
+              diagnósticos entregues.
+            </p>
+          </div>
+
+          {/* GRID COM OS 4 DIFERENCIAIS DA EMPRESA */}
+          <div className="pilares-grid">
+            <div className="pilar-item">
+              <div className="pilar-icon">
+                <FaShieldAlt size={18} />
+              </div>
+              <div className="pilar-info">
+                <h5>Segurança Técnica</h5>
+                <p>ART em todos os serviços</p>
+              </div>
+            </div>
+
+            <div className="pilar-item">
+              <div className="pilar-icon">
+                <FaRegFileAlt size={18} />
+              </div>
+              <div className="pilar-info">
+                <h5>Responsabilidade</h5>
+                <p>Compromisso com o cliente</p>
+              </div>
+            </div>
+
+            <div className="pilar-item">
+              <div className="pilar-icon">
+                <FaRegEye size={18} />
+              </div>
+              <div className="pilar-info">
+                <h5>Transparência</h5>
+                <p>Laudos claros e objetivos</p>
+              </div>
+            </div>
+
+            <div className="pilar-item">
+              <div className="pilar-icon">
+                <FaUsers size={18} />
+              </div>
+              <div className="pilar-info">
+                <h5>Equipe Técnica</h5>
+                <p>Engenheiros especializados</p>
+              </div>
+            </div>
+          </div>
+
+          {/* PAINEL INFERIOR DE INFORMAÇÕES FISCAIS */}
+          <div className="dados-empresa-box">
+            <span>Dados da empresa</span>
+            <h6>SEGPLAN CONSULTORIA LTDA</h6>
+            <p>CNPJ: 64.872.044/0001-94</p>
+            <p>Rua Guimarães Peixoto, nº 75, Casa Amarela, Recife/PE</p>
+          </div>
+        </div>
+      </div>
+    </QuemSomosContainer>
   );
 }
