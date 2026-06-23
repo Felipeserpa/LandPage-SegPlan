@@ -45,12 +45,12 @@ export default function Header() {
           {/* 2. MENU CENTRAL (Apenas os links de navegação textuais) */}
           <ul className={active ? 'nav-menu active' : 'nav-menu'}>
             <li>
-              <a href="#inicio" className="active" onClick={closeMenu}>
+              <a href="#quem-somos" className="active" onClick={closeMenu}>
                 Quem somos
               </a>
             </li>
             <li>
-              <a href="#sobre" onClick={closeMenu}>
+              <a href="#equipe" onClick={closeMenu}>
                 Equipe
               </a>
             </li>
@@ -60,12 +60,12 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="#portfolio" onClick={closeMenu}>
+              <a href="#como-funciona" onClick={closeMenu}>
                 Como Funciona
               </a>
             </li>
             <li>
-              <a href="#contato" onClick={closeMenu}>
+              <a href="#faq" onClick={closeMenu}>
                 FAQ
               </a>
             </li>
@@ -75,7 +75,8 @@ export default function Header() {
           <div className="actions">
             {/* Botão Retangular Azul "Solicitar Orçamento" */}
             <a
-              href="https://wa.me/5581999999999"
+              href="https://wa.me/5581989282737
+              "
               target="_blank"
               rel="noreferrer"
               className="btn-orcamento"

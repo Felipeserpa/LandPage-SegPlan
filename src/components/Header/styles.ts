@@ -16,7 +16,7 @@ const Container = styled.div`
 
   /* Quando o usuário rolar a página, o menu ganha um leve desfoque */
   .header.active nav {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.12);
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
   }
@@ -24,7 +24,7 @@ const Container = styled.div`
   /* A CÁPSULA BRANCA (O menu em si) */
   nav {
     max-width: 2600px; /* Largura ideal para alinhar com o design da foto */
-    height: 79px; /* Altura um pouco mais elegante para o formato pílula */
+    height: 90px; /* Altura um pouco mais elegante para o formato pílula */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -82,7 +82,7 @@ const Container = styled.div`
     bottom: -4px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: px;
     background: #003f7d;
     transition: 0.3s;
   }
