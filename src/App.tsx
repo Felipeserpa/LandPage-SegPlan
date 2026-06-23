@@ -12,6 +12,7 @@ import Cliente from './sections/clientes';
 import ServiceOfer from './sections/Servios';
 import CFunciona from './sections/Cfunciona';
 import DiagnosticoRapido from './sections/DifereFormulario';
+import Faq from './sections/Faq';
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -51,6 +52,7 @@ function App() {
       <ServiceOfer />
       <CFunciona />
       <DiagnosticoRapido />
+      <Faq />
       <Footer />
     </ThemeProvider>
   );
