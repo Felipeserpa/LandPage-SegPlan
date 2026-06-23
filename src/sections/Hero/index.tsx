@@ -42,7 +42,7 @@ export default function HeroSection() {
 
             <div className="hero-buttons">
               <a
-                href="https://wa.me/5581999999999"
+                href="https://wa.me/5581989282737"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-primary"
