@@ -10,6 +10,8 @@ import theme from './assets/styles/theme';
 import About from './sections/About';
 import Cliente from './sections/clientes';
 import ServiceOfer from './sections/Servios';
+import CFunciona from './sections/Cfunciona';
+import DiagnosticoRapido from './sections/DifereFormulario';
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -47,6 +49,8 @@ function App() {
       <Cliente />
       <About />
       <ServiceOfer />
+      <CFunciona />
+      <DiagnosticoRapido />
       <Footer />
     </ThemeProvider>
   );
