@@ -4,7 +4,8 @@ const ServicosContainer = styled.section`
   width: 100%;
   min-height: 100vh;
   color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
   position: relative;
   overflow-x: hidden;
   display: flex;
@@ -19,9 +20,12 @@ const ServicosContainer = styled.section`
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-color: #031B4E;
-    background-image: 
-      radial-gradient(circle at 50% 30%, rgba(14, 75, 180, 0.4) 0%, rgba(3, 27, 78, 0) 70%),
+    background-color: #031b4e;
+    background-image: radial-gradient(
+        circle at 50% 30%,
+        rgba(14, 75, 180, 0.4) 0%,
+        rgba(3, 27, 78, 0) 70%
+      ),
       linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 100% 100%, 45px 45px, 45px 45px;
@@ -90,7 +94,7 @@ const ServicosContainer = styled.section`
      ========================================================================== */
   .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     width: 100%;
   }
@@ -224,18 +228,22 @@ const ServicosContainer = styled.section`
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
-    h2 { font-size: 38px; }
+    h2 {
+      font-size: 38px;
+    }
   }
 
   @media (max-width: 768px) {
     padding: 60px 1.5rem;
-    
+
     .servicos-grid {
       grid-template-columns: 1fr;
     }
 
-    h2 { font-size: 32px; }
-    
+    h2 {
+      font-size: 32px;
+    }
+
     .servico-card {
       padding: 32px 24px;
     }

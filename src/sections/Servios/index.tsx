@@ -74,36 +74,6 @@ const listaServicos = [
     actionText: 'Contratar fiscalização',
     link: '#contato',
   },
-  {
-    isPrincipal: false,
-    icon: <FaBookOpen size={20} />,
-    title: 'Perícia de Engenharia',
-    description:
-      'Assessoria técnica em processos judiciais, administrativos e extrajudiciais, com elaboração de laudos periciais, pareceres e assistência técnica.',
-    features: [
-      'Perícia judicial em construção civil',
-      'Assistência técnica em processos',
-      'Arbitragem de disputas técnicas',
-      'Parecer técnico fundamentado',
-    ],
-    actionText: 'Solicitar perícia',
-    link: '#contato',
-  },
-  {
-    isPrincipal: false,
-    icon: <FaCogs size={20} />,
-    title: 'Consultoria Técnica',
-    description:
-      'Assessoria especializada para decisões de compra, reforma, manutenção e gestão de imóveis, com análise técnica personalizada ao seu contexto.',
-    features: [
-      'Due diligence imobiliária',
-      'Análise de patologias construtivas',
-      'Plano diretor de manutenção',
-      'Consultoria para condomínios',
-    ],
-    actionText: 'Solicitar consultoria',
-    link: '#contato',
-  },
 ];
 
 export default function Servicos() {
