@@ -10,14 +10,15 @@ const passosProcesso = [
   },
   {
     numero: '02',
-    titulo: 'Proposta Técnica',
-    descricao: 'Enviamos proposta detalhada com escopo, prazo e investimento.',
-  },
-  {
-    numero: '03',
     titulo: 'Vistoria in loco',
     descricao: 'Nossa equipe realiza a inspeção presencial no imóvel.',
   },
+  {
+    numero: '03',
+    titulo: 'Proposta Técnica',
+    descricao: 'Enviamos proposta detalhada com escopo, prazo e investimento.',
+  },
+
   {
     numero: '04',
     titulo: 'Elaboração do Laudo',
